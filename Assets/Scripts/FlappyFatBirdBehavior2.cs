@@ -11,6 +11,9 @@ public class FlappyFatBirdBehavior2 : MonoBehaviour
 	// Currently not modified after Start function
 	private Vector3 _initialPosition;
 	private string _currentSceneName;
+	private Rigidbody2D _rb2d;
+	private LineRenderer _lr;
+	private SpriteRenderer _sr;
 	// Modified
 	private bool _objectWasLaunched;
 	private float _timeSittingAround;
@@ -25,8 +28,13 @@ public class FlappyFatBirdBehavior2 : MonoBehaviour
 	private void Awake()
 	{
 		Debug.Log("Flappy Fat Bird has awakened!");
-		// Set the position to position at start
+		// Assign the GeComponent to the variables, so there aren't so many GeComponent calls.
+		_rb2d = GetComponent<Rigidbody2D>();
+		_lr = GetComponent<LineRenderer>();
+		_sr = GetComponent<SpriteRenderer>();
+		
 		_currentSceneName = SceneManager.GetActiveScene().name;
+		// Set the position to position at start
 		_initialPosition = transform.position;
 		Debug.LogFormat("The initial position is {0}", _initialPosition);
 	}
@@ -40,9 +48,13 @@ public class FlappyFatBirdBehavior2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		_lr.SetPosition(0, transform.position);
+		_lr.SetPosition(1, _initialPosition);
+		
+		
 		// of the object is moving at an incredibly slow rate after launching (namely hitting another object)
 		if(_objectWasLaunched &&
-		GetComponent<Rigidbody2D>().velocity.magnitude <= 0.1) 
+		_rb2d.velocity.magnitude <= 0.1) 
 		{
 			_timeSittingAround += Time.deltaTime; // deltaTiem is the second/framerate
 		}
@@ -59,9 +71,10 @@ public class FlappyFatBirdBehavior2 : MonoBehaviour
     // When the bird is clicked
     private void OnMouseDown()
     {
-        // Turn it red\
-        // TODO: Replace below GetComponentSpriteRender line & OnMouseUp with helper
-        GetComponent<SpriteRenderer>().color = Color.red;
+		// Enable line
+		_lr.enabled = true;
+        // Turn it red
+        _sr.color = Color.red;
     }
 
     // While the bird remains clicked
@@ -81,16 +94,18 @@ public class FlappyFatBirdBehavior2 : MonoBehaviour
     // When the mouse button is released - after clicking
     private void OnMouseUp()
     {
+		// Disable line
+		_lr.enabled = false;
         // Turn it white (original color)
-        GetComponent<SpriteRenderer>().color = Color.white;
+        _sr.color = Color.white;
 		// Launch the object
 		// Debug.LogFormat("The transform.position is {0}", transform.position);
 		// Since miving the object back puts it in a negative position compared to the start and we want positive force
 		// (in that case), we 
 		Vector2 directionToInitialPosition = _initialPosition - transform.position;
 		// Debug.LogFormat("The directionToInitialPosition is {0}", directionToInitialPosition);
-		GetComponent<Rigidbody2D>().AddForce(directionToInitialPosition * _launchPower);
-		GetComponent<Rigidbody2D>().gravityScale = 1;
+		_rb2d.AddForce(directionToInitialPosition * _launchPower);
+		_rb2d.gravityScale = 1;
 		_objectWasLaunched = true;
     }
 }
