@@ -1,0 +1,8 @@
+Prototype made using the "How to Make a Game - Unity for Beginners" video at:
+https://www.youtube.com/watch?v=OR0e-1UBEOU&list=PL9ZRb4KuokfHRNNtO2GeLCdxa8XMtiiZV&index=2&t=9497s
+Fat Bird Sprite taken from:
+https://opengameart.org/content/fat-bird-sprite-sheets-for-gamedev
+Full Background from:
+https://opengameart.org/content/bevouliin-free-beach-game-background-for-game-developers
+cratex.png sprite (crate) from:
+https://opengameart.org/content/simple-toon-wooden-crate-texture
