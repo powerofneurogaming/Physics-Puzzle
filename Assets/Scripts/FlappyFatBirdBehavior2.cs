@@ -9,18 +9,17 @@ public class FlappyFatBirdBehavior2 : MonoBehaviour
 	// Variables used in this class - should all start with underscore (_)
 	// Local:
 	// Currently not modified after Start function
+	// SerializeField enables variable to be adjusted in object inspector (under script variables.
+	// The variable name also displays with first letter capped, and spacing beween the first cap and previous letter.
+	[SerializeField] private float _launchPower = 500;
 	private Vector3 _initialPosition;
 	private string _currentSceneName;
 	private Rigidbody2D _rb2d;
 	private LineRenderer _lr;
 	private SpriteRenderer _sr;
-	// Modified
+	// Modified after start
 	private bool _objectWasLaunched;
 	private float _timeSittingAround;
-	// SerializeField enables variable to be adjusted in object inspector (under script variables.
-	// The variable name also displays with first letter capped, and spacing beween the first cap and previous letter.
-	[SerializeField] private float _launchPower = 500;
-	
 	
     // Functions automatically called as object behavior - MonoBehavior	
 	

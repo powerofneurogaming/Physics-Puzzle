@@ -8,3 +8,5 @@ cratex.png sprite (crate) from:
 https://opengameart.org/content/simple-toon-wooden-crate-texture
 Spinning Coin 8-bit from:
 https://opengameart.org/content/spinning-coin-8-bit-sprite
+Blue monster sprite from:
+https://opengameart.org/content/blue-land-monster-sprites
