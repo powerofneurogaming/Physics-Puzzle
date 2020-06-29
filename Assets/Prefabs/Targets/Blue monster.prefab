@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8710312005524996654}
   - component: {fileID: 3870101078289243056}
   - component: {fileID: 7002396936488193744}
+  - component: {fileID: 3253652935167293875}
   m_Layer: 0
   m_Name: Blue monster
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 8539632911119951272}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9.79, y: -4.23, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.57317, y: 0.57317, z: 0.57317}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -150,3 +151,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.04, y: 2.71}
   m_EdgeRadius: 0
+--- !u!114 &3253652935167293875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8539632911119951272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca87fa212d07a39428d3e337f41b910d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cloudParticlePrefab: {fileID: 162081505674683965, guid: e6ece6a5071a0c74d8037c6018176489,
+    type: 3}
