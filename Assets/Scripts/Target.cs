@@ -8,7 +8,7 @@ public class Target : MonoBehaviour
 	//Variables
 	// Public
 	//Private
-	[SerializeField] private GameObject _cloudParticlePrefab;
+	[SerializeField] private GameObject _cloudParticlePrefab = null;
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{

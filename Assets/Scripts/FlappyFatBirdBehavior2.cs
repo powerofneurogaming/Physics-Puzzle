@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 // using UnityEngine.Physics2DModule;
 
@@ -12,6 +10,7 @@ public class FlappyFatBirdBehavior2 : MonoBehaviour
 	// SerializeField enables variable to be adjusted in object inspector (under script variables.
 	// The variable name also displays with first letter capped, and spacing beween the first cap and previous letter.
 	[SerializeField] private float _launchPower = 500;
+	[SerializeField] private string _objectName = "Projectile";
 	private Vector3 _initialPosition;
 	private string _currentSceneName;
 	private Rigidbody2D _rb2d;
@@ -26,7 +25,7 @@ public class FlappyFatBirdBehavior2 : MonoBehaviour
 	// Called right before Start function, commonly used to set 
 	private void Awake()
 	{
-		Debug.Log("Flappy Fat Bird has awakened!");
+		Debug.LogFormat("{0} has awakened!", _objectName);
 		// Assign the GeComponent to the variables, so there aren't so many GeComponent calls.
 		_rb2d = GetComponent<Rigidbody2D>();
 		_lr = GetComponent<LineRenderer>();
@@ -40,8 +39,8 @@ public class FlappyFatBirdBehavior2 : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        Debug.Log("Flappy Fat Bird has started!");
-    }
+		Debug.LogFormat("{0} has started!", _objectName);
+	}
 	
 	 
     // Update is called once per frame
