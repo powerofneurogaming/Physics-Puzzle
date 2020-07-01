@@ -1,16 +1,29 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelController : MonoBehaviour
 {
+    // public variables
+    // TODO: Variables set outside of this class, and altered outside
+    public Text winButton;
+    // Counters for the
+    public int projectilesLeft;
+    public int targetsLeft;
+    public int targetsHit;
+    // Private
     // Static for the one instance ever within the game - only starts at given value once.
     // TODO: Make index start from whichever level we're on
     private static int _nextLevelIndex = 1;
     private Target[] _targets;
+    private float totalTime = 0.0F;
 
     private void OnEnable()
     {
         _targets = FindObjectsOfType<Target>();
+        targetsLeft = _targets.Count();
+
     }
     // Start is called before the first frame update
     /* void Start()

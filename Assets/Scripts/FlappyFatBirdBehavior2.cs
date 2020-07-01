@@ -2,14 +2,19 @@
 using UnityEngine.SceneManagement;
 // using UnityEngine.Physics2DModule;
 
+// TODO: Change the name of the class FlappyFatBirdBehavior to Projectile.
 public class FlappyFatBirdBehavior2 : MonoBehaviour
 {
 	// Variables used in this class - should all start with underscore (_)
+	// Public:
+
 	// Local:
 	// Currently not modified after Start function
 	// SerializeField enables variable to be adjusted in object inspector (under script variables.
 	// The variable name also displays with first letter capped, and spacing beween the first cap and previous letter.
+	[SerializeField] private int _projectilesLeft = 5;
 	[SerializeField] private float _launchPower = 500;
+	// TODO: Remove _objectName and just use tags instead.
 	[SerializeField] private string _objectName = "Projectile";
 	private Vector3 _initialPosition;
 	private string _currentSceneName;
@@ -19,9 +24,10 @@ public class FlappyFatBirdBehavior2 : MonoBehaviour
 	// Modified after start
 	private bool _objectWasLaunched;
 	private float _timeSittingAround;
-	
-    // Functions automatically called as object behavior - MonoBehavior	
-	
+    private int _launchCount;
+
+	// Functions automatically called as object behavior - MonoBehavior	
+
 	// Called right before Start function, commonly used to set 
 	private void Awake()
 	{
@@ -30,7 +36,8 @@ public class FlappyFatBirdBehavior2 : MonoBehaviour
 		_rb2d = GetComponent<Rigidbody2D>();
 		_lr = GetComponent<LineRenderer>();
 		_sr = GetComponent<SpriteRenderer>();
-		
+
+		_launchCount = 0;
 		_currentSceneName = SceneManager.GetActiveScene().name;
 		// Set the position to position at start
 		_initialPosition = transform.position;
@@ -41,33 +48,51 @@ public class FlappyFatBirdBehavior2 : MonoBehaviour
     {
 		Debug.LogFormat("{0} has started!", _objectName);
 	}
-	
-	 
-    // Update is called once per frame
-    void Update()
-    {
+
+
+	// Update is called once per frame
+	void Update()
+	{
 		_lr.SetPosition(0, transform.position);
 		_lr.SetPosition(1, _initialPosition);
-		
-		
+
+
 		// of the object is moving at an incredibly slow rate after launching (namely hitting another object)
-		if(_objectWasLaunched &&
-		_rb2d.velocity.magnitude <= 0.1) 
+		if (_objectWasLaunched &&
+		_rb2d.velocity.magnitude <= 0.1)
 		{
 			_timeSittingAround += Time.deltaTime; // deltaTiem is the second/framerate
 		}
-			
-		// Reload scene when object moves too far up or down
-        if(transform.position.x > 20 || 
-		transform.position.x < -20 || 
-		transform.position.y > 10 || 
+
+		// Reset position when object moves too far to the side or down, or effectively stops moving.
+		if (transform.position.x > 20 ||
+		transform.position.x < -20 ||
 		transform.position.y < -10 ||
 		_timeSittingAround > 3)
-			SceneManager.LoadScene(_currentSceneName); // reload current scene
+		{ // transform.position.y > 10 ||
+            ResetProjectile(); 
+			// transform.position = _initialPosition;  // Move back to the starting position
+			// SceneManager.LoadScene(_currentSceneName); // reload current scene
+        }
+	}
+
+    // Resets the position of the projectile, so it can be launched again
+    private void ResetProjectile()
+    {
+		// TODO: change _initialPosition to moving spawn point/launcher
+		// Move back to the starting position
+		transform.position = _initialPosition;  
+		_objectWasLaunched = false;
+        _timeSittingAround = 0.0F;
+		// Set it still
+		_rb2d.gravityScale = 0;
+		_rb2d.velocity = new Vector3(0, 0, 0);
+        _rb2d.angularVelocity = 0.0F; // new Vector3(0, 0, 0);
+		transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 
-    // When the bird is clicked
-    private void OnMouseDown()
+	// When the projectile is clicked
+	private void OnMouseDown()
     {
 		// Enable line
 		_lr.enabled = true;
@@ -75,7 +100,7 @@ public class FlappyFatBirdBehavior2 : MonoBehaviour
         _sr.color = Color.red;
     }
 
-    // While the bird remains clicked
+    // While the projectile remains clicked
     private void OnMouseDrag()
     {
         // ScreenToWorld converts the position, returning a Vector3 (x, y, z)
@@ -96,6 +121,8 @@ public class FlappyFatBirdBehavior2 : MonoBehaviour
 		_lr.enabled = false;
         // Turn it white (original color)
         _sr.color = Color.white;
+		_launchCount++;
+        Debug.LogFormat("The projectile has been launched {0} times now", _launchCount);
 		// Launch the object
 		// Debug.LogFormat("The transform.position is {0}", transform.position);
 		// Since miving the object back puts it in a negative position compared to the start and we want positive force

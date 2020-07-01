@@ -7,21 +7,22 @@ public class Target : MonoBehaviour
 {
 	//Variables
 	// Public
+
 	//Private
 	[SerializeField] private GameObject _cloudParticlePrefab = null;
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
 		Debug.Log("Collision started!");
-		// TODO: Change the name of the object, and extend if portion to outside
+
+		// TODO: Change the name of the object FlappyFatBirdBehavior to Projectile.
 		FlappyFatBirdBehavior2 projectile = collision.collider.GetComponent<FlappyFatBirdBehavior2>();
 		// Checks if the object is of defined type (in sharp brackets <>)
 		if (projectile !=null)
 		{
 			// Destroy the current object
 			Debug.Log("The projectile has destroyed the target!");
-            MakePuffOfClouds();
-			Destroy(gameObject);
+			DestroyWithPuff();
 			return;
 		}
 
@@ -34,8 +35,7 @@ public class Target : MonoBehaviour
 		if( collision.contacts[0].normal.y < -0.5 )
 		{
 			Debug.Log("Something that isn't a projectile or a target has destroyed the target from above!");
-			MakePuffOfClouds();
-			Destroy(gameObject);
+			DestroyWithPuff();
 		}
 		
 		return;
@@ -44,6 +44,7 @@ public class Target : MonoBehaviour
 
 	private void MakePuffOfClouds()
     {
+		// TODO: Stop particle effect after first puff - currently keeps looping
 		Instantiate(_cloudParticlePrefab, transform.position, Quaternion.identity);
 		return;
     }
