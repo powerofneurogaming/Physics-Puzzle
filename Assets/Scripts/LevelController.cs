@@ -2,12 +2,13 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class LevelController : MonoBehaviour
 {
     // public variables
     // TODO: Variables set outside of this class, and altered outside
-    public Text winButton;
+    public UnityEngine.UI.Button winButton;
     // Counters for the
     public int projectilesLeft;
     public int targetsLeft;

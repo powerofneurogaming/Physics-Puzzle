@@ -1,13 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
-// using UnityEngine.Physics2DModule;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 
-// TODO: Change the name of the class FlappyFatBirdBehavior to Projectile.
+// TODO: Change the name of the class FlappyFatBirdBehavior2 to Projectile.
 public class FlappyFatBirdBehavior2 : MonoBehaviour
 {
-	// Variables used in this class - should all start with underscore (_)
-	// Public:
-
+    // Variables used in this class - should all start with underscore (_)
+    // Public:
+	// External objects to modify
+    public Button winButton;
 	// Local:
 	// Currently not modified after Start function
 	// SerializeField enables variable to be adjusted in object inspector (under script variables.
