@@ -13,11 +13,17 @@ public class LevelController : MonoBehaviour
     // Counters for the
     public int projectilesLeft;
     public int targetsLeft;
-    public int targetsHit;
+    public int targetsHit = 0;
     // Private
     // Static for the one instance ever within the game - only starts at given value once.
     // TODO: Make index start from whichever level we're on
     private static int _nextLevelIndex = 1;
+    // Modifyable from Unity editor
+    [SerializeField]  private int targetMultiplyer = 100;
+    [SerializeField] private int projectileMultiplyer = 100;
+    [SerializeField] private int timeMultiplyer = 100;
+    [SerializeField] private int targetTime = 120;
+
     private Target[] _targets;
     private float _totalTime = 0.0F;
     private bool _levelComplete = false;
@@ -28,6 +34,7 @@ public class LevelController : MonoBehaviour
         targetsLeft = _targets.Count();
         winText.text = "";
     }
+
     // Start is called before the first frame update
     /* void Start()
     {
@@ -59,15 +66,38 @@ public class LevelController : MonoBehaviour
             winText.text = String.Format("You win!\n" +
                 "Targets hit: {0}\n" +
                 "Shots bonus: \n" +
-                "Time bonus: " +
+                "Time bonus: \n" +
                 "Total: ",
-                _targetsLeft);
+                targetsLeft);
         }
         // We go to the next level
         /*
         _nextLevelIndex++;
         string nextLevelName = "Level" + _nextLevelIndex;
         SceneManager.LoadScene(nextLevelName);
+        */
+    }
+
+    private void SetButtonText(string buttonText)
+    {
+        int targetBonus = targetsHit * targetMultiplyer;
+        int projectileBonus = projectilesLeft * projectileMultiplyer;
+        float timeBonus = Math.Min(0.00F, targetTime - _totalTime);
+        float totalScore = targetBonus + projectileBonus + timeBonus; 
+        winText.text = $"{buttonText}\n"; /* +
+            $"Targets hit: {targetsHit} x {targetMultiplyer} = {targetBonus}\n" +
+            $"Shots bonus: {projectilesLeft} x {projectileMultiplyer}" +
+            $"Time bonus: {timeBonus}" +
+            $"Total: {totalScore}";
+        */
+
+        /*
+        winText.text = String.Format("{0}\n" +
+                "Targets hit: {1} x {} = {2}\n" +
+                "Shots bonus: {2}\n" +
+                "Time bonus: {3}\n" +
+                "Total: ",
+                targetsLeft);
         */
     }
 }

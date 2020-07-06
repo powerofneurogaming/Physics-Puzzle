@@ -9,7 +9,7 @@ public class FlappyFatBirdBehavior2 : MonoBehaviour
     // Variables used in this class - should all start with underscore (_)
     // Public:
 	// External objects to modify
-    public Button winButton;
+   // public UnityEngine.UI.Button winButton;
 	// Local:
 	// Currently not modified after Start function
 	// SerializeField enables variable to be adjusted in object inspector (under script variables.
