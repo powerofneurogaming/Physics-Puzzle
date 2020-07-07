@@ -80,14 +80,22 @@ public class LevelController : MonoBehaviour
 
     private void SetButtonText(string buttonText)
     {
+        // Calculate the level bonuses
         int targetBonus = targetsHit * targetMultiplyer;
         int projectileBonus = projectilesLeft * projectileMultiplyer;
         float timeBonus = Math.Min(0.00F, targetTime - _totalTime);
-        float totalScore = targetBonus + projectileBonus + timeBonus; 
-        winText.text = $"{buttonText}\n"; /* +
+        float totalScore = targetBonus + projectileBonus + timeBonus;
+        // Then assign them
+        string resultText = $"{buttonText}\n";
+        _ = $"Targets hit: {targetsHit} x {targetMultiplyer} = {targetBonus}\n";
+        _ = $"Shots bonus: {projectilesLeft} x {projectileMultiplyer} = {projectileBonus}\n";
+        _ = $"Time bonus: {timeBonus} (target time of {targetTime}\n";
+        _ = $"Total: {totalScore}";
+
+        winText.text = resultText; /* +
             $"Targets hit: {targetsHit} x {targetMultiplyer} = {targetBonus}\n" +
-            $"Shots bonus: {projectilesLeft} x {projectileMultiplyer}" +
-            $"Time bonus: {timeBonus}" +
+            $"Shots bonus: {projectilesLeft} x {projectileMultiplyer}\n" +
+            $"Time bonus: {timeBonus}\n" +
             $"Total: {totalScore}";
         */
 
