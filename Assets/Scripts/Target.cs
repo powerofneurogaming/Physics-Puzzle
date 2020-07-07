@@ -14,9 +14,7 @@ public class Target : MonoBehaviour
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
 		Debug.Log("Collision started!");
-
-		// TODO: Change the name of the object FlappyFatBirdBehavior to Projectile.
-		FlappyFatBirdBehavior2 projectile = collision.collider.GetComponent<FlappyFatBirdBehavior2>();
+		Projectile projectile = collision.collider.GetComponent<Projectile>();
 		// Checks if the object is of defined type (in sharp brackets <>)
 		if (projectile !=null)
 		{

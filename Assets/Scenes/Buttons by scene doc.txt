@@ -1,0 +1,28 @@
+
+Main Menu
+	World Select
+	Options
+	Exit
+	
+World Select
+	World 1
+	World 2
+	...
+	World n
+	Special Levels (TBD)
+	
+World [worldNo] (Level Select)
+	Level {worldNo]-1
+	...
+	Level [WorldNo]-n
+	
+Level [WorldNo]-{levelNo]
+	Level Select
+	Reset
+	Pause/Options
+	Prompts/Results
+	
+Options
+	Sound
+	Difficulty
+	

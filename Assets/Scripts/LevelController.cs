@@ -8,17 +8,18 @@ using UnityEngine.UIElements;
 public class LevelController : MonoBehaviour
 {
     // public variables
-    // TODO: Variables set outside of this class, and altered outside
-    public Text winText;
+    // TODO: Since button cannot be targeted, have button target variables in this class
+   //  public Text winText;
     // Counters for the
-    public int projectilesLeft;
-    public int targetsLeft;
+    public int projectilesLeft = 6;
+    public int targetsLeft = 1;
     public int targetsHit = 0;
     // Private
     // Static for the one instance ever within the game - only starts at given value once.
     // TODO: Make index start from whichever level we're on
     private static int _nextLevelIndex = 1;
     // Modifyable from Unity editor
+    // Multiplyers for the score
     [SerializeField]  private int targetMultiplyer = 100;
     [SerializeField] private int projectileMultiplyer = 100;
     [SerializeField] private int timeMultiplyer = 100;
@@ -32,7 +33,7 @@ public class LevelController : MonoBehaviour
     {
         _targets = FindObjectsOfType<Target>();
         targetsLeft = _targets.Count();
-        winText.text = "";
+        // winText.text = "";
     }
 
     // Start is called before the first frame update
@@ -60,16 +61,18 @@ public class LevelController : MonoBehaviour
         // This part only reached when there are no targets found
         Debug.Log("All the targets are gone!");
         // We enable going to the next level
-        if (!_levelComplete)
-        {
+        //if (!_levelComplete)
+        //{
             _levelComplete = true;
+            /*
             winText.text = String.Format("You win!\n" +
                 "Targets hit: {0}\n" +
                 "Shots bonus: \n" +
                 "Time bonus: \n" +
                 "Total: ",
                 targetsLeft);
-        }
+            */
+        //}
         // We go to the next level
         /*
         _nextLevelIndex++;
@@ -78,12 +81,13 @@ public class LevelController : MonoBehaviour
         */
     }
 
-    private void SetButtonText(string buttonText)
+    public string SetButtonText(string buttonText)
     {
         // Calculate the level bonuses
         int targetBonus = targetsHit * targetMultiplyer;
         int projectileBonus = projectilesLeft * projectileMultiplyer;
-        float timeBonus = Math.Min(0.00F, targetTime - _totalTime);
+        float timeLeft = Math.Min(0.00F, targetTime - _totalTime);
+        float timeBonus = timeLeft * timeMultiplyer;
         float totalScore = targetBonus + projectileBonus + timeBonus;
         // Then assign them
         string resultText = $"{buttonText}\n";
@@ -92,7 +96,9 @@ public class LevelController : MonoBehaviour
         _ = $"Time bonus: {timeBonus} (target time of {targetTime}\n";
         _ = $"Total: {totalScore}";
 
-        winText.text = resultText; /* +
+        return resultText;
+        // winText.text = resultText; 
+        /* +
             $"Targets hit: {targetsHit} x {targetMultiplyer} = {targetBonus}\n" +
             $"Shots bonus: {projectilesLeft} x {projectileMultiplyer}\n" +
             $"Time bonus: {timeBonus}\n" +
