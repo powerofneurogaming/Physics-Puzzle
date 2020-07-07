@@ -1656,7 +1656,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -90.002106, y: -84.786446}
+  m_AnchoredPosition: {x: -61, y: -213}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1041182688
@@ -1882,7 +1882,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1381304393
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2300,9 +2300,9 @@ CanvasRenderer:
   m_CullTransparentMesh: 0
 --- !u!4 &1769635163 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 6096405293395710740, guid: 73571e464b68990488ff450020eba158,
+  m_CorrespondingSourceObject: {fileID: 1206768646631782229, guid: f0f43e8eb242dd14ba04b74725a7c601,
     type: 3}
-  m_PrefabInstance: {fileID: 6096405291636878927}
+  m_PrefabInstance: {fileID: 1206768647057082894}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1849792282
 GameObject:
@@ -2472,7 +2472,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1965792482}
   m_Layer: 0
-  m_Name: Monsters
+  m_Name: Targets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2648,6 +2648,76 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85e535cc24d3d0043b807b5b506b1266, type: 3}
+--- !u!1001 &1206768647057082894
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1206768646631782229, guid: f0f43e8eb242dd14ba04b74725a7c601,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206768646631782229, guid: f0f43e8eb242dd14ba04b74725a7c601,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206768646631782229, guid: f0f43e8eb242dd14ba04b74725a7c601,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206768646631782229, guid: f0f43e8eb242dd14ba04b74725a7c601,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206768646631782229, guid: f0f43e8eb242dd14ba04b74725a7c601,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206768646631782229, guid: f0f43e8eb242dd14ba04b74725a7c601,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206768646631782229, guid: f0f43e8eb242dd14ba04b74725a7c601,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206768646631782229, guid: f0f43e8eb242dd14ba04b74725a7c601,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206768646631782229, guid: f0f43e8eb242dd14ba04b74725a7c601,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206768646631782229, guid: f0f43e8eb242dd14ba04b74725a7c601,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206768646631782229, guid: f0f43e8eb242dd14ba04b74725a7c601,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1206768646631782230, guid: f0f43e8eb242dd14ba04b74725a7c601,
+        type: 3}
+      propertyPath: m_Name
+      value: Crab Meat
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1206768646631782231, guid: f0f43e8eb242dd14ba04b74725a7c601, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: f0f43e8eb242dd14ba04b74725a7c601, type: 3}
 --- !u!1001 &5100007571073205010
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2674,6 +2744,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Reset Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 5100007570487402185, guid: 553cefb2e2469e2429eec137a5224b40,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5100007570487402190, guid: 553cefb2e2469e2429eec137a5224b40,
         type: 3}
@@ -2822,75 +2897,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 553cefb2e2469e2429eec137a5224b40, type: 3}
---- !u!1001 &6096405291636878927
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6096405293395710740, guid: 73571e464b68990488ff450020eba158,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -12.57
-      objectReference: {fileID: 0}
-    - target: {fileID: 6096405293395710740, guid: 73571e464b68990488ff450020eba158,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.98
-      objectReference: {fileID: 0}
-    - target: {fileID: 6096405293395710740, guid: 73571e464b68990488ff450020eba158,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6096405293395710740, guid: 73571e464b68990488ff450020eba158,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6096405293395710740, guid: 73571e464b68990488ff450020eba158,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6096405293395710740, guid: 73571e464b68990488ff450020eba158,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6096405293395710740, guid: 73571e464b68990488ff450020eba158,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6096405293395710740, guid: 73571e464b68990488ff450020eba158,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6096405293395710740, guid: 73571e464b68990488ff450020eba158,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6096405293395710740, guid: 73571e464b68990488ff450020eba158,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6096405293395710740, guid: 73571e464b68990488ff450020eba158,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6096405293395710743, guid: 73571e464b68990488ff450020eba158,
-        type: 3}
-      propertyPath: m_Name
-      value: Flappy Fat Bird
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 73571e464b68990488ff450020eba158, type: 3}
 --- !u!1001 &8183355969031949576
 PrefabInstance:
   m_ObjectHideFlags: 0

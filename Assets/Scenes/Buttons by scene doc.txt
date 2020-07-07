@@ -25,4 +25,5 @@ Level [WorldNo]-{levelNo]
 Options
 	Sound
 	Difficulty
+	Exit
 	

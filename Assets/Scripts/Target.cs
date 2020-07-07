@@ -26,8 +26,11 @@ public class Target : MonoBehaviour
 
 		// Check if the target was just hit by another target
 		Target target = collision.collider.GetComponent<Target>();
-		if(target != null)
+		if (target != null)
+		{
+			Debug.Log("Target bumped against another target. It's fine");
 			return; // we stop checking
+		}
 		
 		// We check if the target was collided from above just enough
 		if( collision.contacts[0].normal.y < -0.5 )
