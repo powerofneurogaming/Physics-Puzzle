@@ -170,6 +170,7 @@ GameObject:
   - component: {fileID: 8905470015207296470}
   - component: {fileID: 8905470015207296469}
   - component: {fileID: 8905470015207296468}
+  - component: {fileID: 4524348426033771471}
   m_Layer: 5
   m_Name: Worldl Select Button
   m_TagString: Untagged
@@ -276,4 +277,27 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8905470015207296469}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4524348426033771471}
+        m_MethodName: GoToWorldSelect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4524348426033771471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8905470015207296466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 311a6b9078eb85946a7d48a9350289ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

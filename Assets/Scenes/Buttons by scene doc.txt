@@ -15,12 +15,20 @@ World [worldNo] (Level Select)
 	Level {worldNo]-1
 	...
 	Level [WorldNo]-n
+	Previous page (if applicable)
+	Next page (if applicable)
 	
 Level [WorldNo]-{levelNo]
 	Level Select
 	Reset
 	Pause/Options
-	Prompts/Results
+	[On win/lose]
+		You win/lose!
+		Prompts/Results
+		if win
+			Next level
+		else
+			try again!
 	
 Options
 	Sound
