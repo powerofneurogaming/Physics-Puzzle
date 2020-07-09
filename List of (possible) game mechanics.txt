@@ -1,0 +1,25 @@
+General game mechanics
+
+Main ones:
+	Food launched from focal point, affected by gravity, by dragging the food items.
+	Food hits target/person, food vanishes along with target/person.
+	Food vanishes when it stays still too long.
+	Progression enabled when enough people/customrs are fed.
+	
+Interchangeable mechanics:
+	Limited amount of food items
+	Alternating types of food items, a la Tetris or Bubble Pop
+	Certain tastes for people, determined either by shirt color or floating display (dialog box, arrow, etc.)
+	Obstacles inhibiting range of projectile.
+	Penalty for hitting the ground
+		Possibly bounchy food
+	Having to collect (mutliple) items in midair.
+	Certain customers must be fed within a certain amount of shots
+	Items that can't be fed to customers, possibly to exterminate obstacles
+	Objects/obstacles that move (likely based on a counter)
+	Auto-lose conditions
+		Having a moveable obstacle fall on a customer.
+		Missing to hit a target - person or obstacle - with a designated projectile
+			Failing to use enough of the finite projectiles.
+		Not hitting enough of the target customers
+	

@@ -120,9 +120,10 @@ public class LevelController : MonoBehaviour
         _ = $"Time bonus: {timeBonus} (target time of {targetTime}\n";
         _ = $"Total: {totalScore}";
         if(isWin)
-            resultText = "You Win!";
+            resultText = "Click to next level";
         else
-            resultText = "You lose!";
+            // TODO : Display text based on required win conditions, or auto lose condition
+            resultText = "Click to restart";
         Debug.LogFormat("SetResult text returning a string of {0}", resultText);
         return resultText;
         // winText.text = resultText; 
