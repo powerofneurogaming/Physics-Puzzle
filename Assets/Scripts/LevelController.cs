@@ -10,7 +10,8 @@ public class LevelController : MonoBehaviour
     // public variables
     // TODO: Since button cannot be targeted, have button target variables in this class
    //  public Text winText;
-    // Counters for the
+    // Counters for the playable levels, with default values
+    // TODO: Change to private, have getters and setters for variables
     public int projectilesLeft = 6;
     public int targetsLeft = 1;
     public int targetsHit = 0;
@@ -25,6 +26,11 @@ public class LevelController : MonoBehaviour
     [SerializeField] private int timeMultiplyer = 100;
     [SerializeField] private int targetTime = 120;
 
+    // For modifying the result button
+    private GameObject _resultButton;
+    private Text _resultText;
+
+    // Used to target score
     private Target[] _targets;
     private float _totalTime = 0.0F;
     private bool _levelComplete = false;
@@ -37,10 +43,20 @@ public class LevelController : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    /* void Start()
+    private void Start()
     {
-        
-    } */
+        // Button in this specific path, based on the Hierarchy view, will be returned.
+        _resultButton = GameObject.Find("/Canvas/Result button");
+        if (_resultButton == null)
+            Debug.Log("Could not find the Result button!");
+        else
+        {
+            Debug.Log("Found the Result button!");
+            _resultText = _resultButton.GetComponentInChildren<Text>();
+            _resultButton.SetActive(false);
+
+        }
+    }
 
     // Update is called once per frame
     void Update()
@@ -81,7 +97,7 @@ public class LevelController : MonoBehaviour
         */
     }
 
-    public string SetButtonText(string buttonText)
+    public string GetResultText(bool isWin)
     {
         // Calculate the level bonuses
         int targetBonus = targetsHit * targetMultiplyer;
@@ -90,12 +106,21 @@ public class LevelController : MonoBehaviour
         float timeBonus = timeLeft * timeMultiplyer;
         float totalScore = targetBonus + projectileBonus + timeBonus;
         // Then assign them
-        string resultText = $"{buttonText}\n";
-        _ = $"Targets hit: {targetsHit} x {targetMultiplyer} = {targetBonus}\n";
+        string resultText;
+        if (isWin)
+            resultText = "You Win!";
+        else
+            resultText = "You lose!";
+        // resultText = $"{buttonText}\n";
+        resultText += $"\nTargets hit: {targetsHit} x {targetMultiplyer} = {targetBonus}\n";
         _ = $"Shots bonus: {projectilesLeft} x {projectileMultiplyer} = {projectileBonus}\n";
         _ = $"Time bonus: {timeBonus} (target time of {targetTime}\n";
         _ = $"Total: {totalScore}";
-
+        if(isWin)
+            resultText = "You Win!";
+        else
+            resultText = "You lose!";
+        Debug.LogFormat("SetResult text returning a string of {0}", resultText);
         return resultText;
         // winText.text = resultText; 
         /* +
