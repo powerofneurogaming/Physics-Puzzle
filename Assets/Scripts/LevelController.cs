@@ -10,11 +10,7 @@ public class LevelController : MonoBehaviour
     // public variables
     // TODO: Since button cannot be targeted, have button target variables in this class
    //  public Text winText;
-    // Counters for the playable levels, with default values
-    // TODO: Change to private, have getters and setters for variables
-    public int projectilesLeft = 6;
-    public int targetsLeft = 1;
-    public int targetsHit = 0;
+
     // Private
     // Static for the one instance ever within the game - only starts at given value once.
     // TODO: Make index start from whichever level we're on
@@ -25,6 +21,11 @@ public class LevelController : MonoBehaviour
     [SerializeField] private int projectileMultiplyer = 100;
     [SerializeField] private int timeMultiplyer = 100;
     [SerializeField] private int targetTime = 120;
+
+    // Counters for the playable levels, with default values
+    private int projectilesLeft = 6;
+    private int targetsLeft = 1;
+    private int targetsHit = 0;
 
     // For modifying the result button
     private GameObject _resultButton;
@@ -100,7 +101,7 @@ public class LevelController : MonoBehaviour
         */
     }
 
-    public string GetResultText(bool isWin)
+    public string MakeResultText(bool isWin)
     {
         // Calculate the level bonuses
         int targetBonus = targetsHit * targetMultiplyer;
@@ -119,11 +120,15 @@ public class LevelController : MonoBehaviour
         _ = $"Shots bonus: {projectilesLeft} x {projectileMultiplyer} = {projectileBonus}\n";
         _ = $"Time bonus: {timeBonus} (target time of {targetTime}\n";
         _ = $"Total: {totalScore}";
-        if(isWin)
+        if (isWin)
+        {
             resultText = "Click to next level";
+        }
         else
+        {
             // TODO : Display text based on required win conditions, or auto lose condition
             resultText = "Click to restart";
+        }
         Debug.LogFormat("SetResult text returning a string of {0}", resultText);
         return resultText;
         // winText.text = resultText; 

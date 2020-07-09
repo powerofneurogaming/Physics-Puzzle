@@ -12,7 +12,7 @@ Interchangeable mechanics:
 	Certain tastes for people, determined either by shirt color or floating display (dialog box, arrow, etc.)
 	Obstacles inhibiting range of projectile.
 	Penalty for hitting the ground
-		Possibly bounchy food
+		Possibly bouncy food or other items
 	Having to collect (mutliple) items in midair.
 	Certain customers must be fed within a certain amount of shots
 	Items that can't be fed to customers, possibly to exterminate obstacles
@@ -22,4 +22,4 @@ Interchangeable mechanics:
 		Missing to hit a target - person or obstacle - with a designated projectile
 			Failing to use enough of the finite projectiles.
 		Not hitting enough of the target customers
-	
+	Infinite play mode, where the player tries to get the best score
