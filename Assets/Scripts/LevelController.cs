@@ -47,14 +47,16 @@ public class LevelController : MonoBehaviour
     {
         // Button in this specific path, based on the Hierarchy view, will be returned.
         _resultButton = GameObject.Find("/Canvas/Result button");
-        if (_resultButton == null)
-            Debug.Log("Could not find the Result button!");
-        else
+        switch (_resultButton)
         {
-            Debug.Log("Found the Result button!");
-            _resultText = _resultButton.GetComponentInChildren<Text>();
-            _resultButton.SetActive(false);
-
+            case null:
+                Debug.Log("Could not find the Result button!");
+                break;
+            default:
+                Debug.Log("Found the Result button!");
+                _resultText = _resultButton.GetComponentInChildren<Text>();
+                _resultButton.SetActive(false);
+                break;
         }
     }
 
@@ -67,8 +69,9 @@ public class LevelController : MonoBehaviour
         {
             _totalTime = Time.deltaTime;
         }
+
+        // TODO; Edit so that the number of projectiles
         // Check if there is at least one target in the list of target objects
-        
         foreach (Target target in _targets)
         {
             if (target != null)
