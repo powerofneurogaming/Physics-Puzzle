@@ -23,3 +23,5 @@ Interchangeable mechanics:
 			Failing to use enough of the finite projectiles.
 		Not hitting enough of the target customers
 	Infinite play mode, where the player tries to get the best score
+		Last the longest possible with gradually increasing difficulty
+		Lose once a fail case - missing a target/person - occurs, results appear.
