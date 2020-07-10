@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class ReloadButton : MonoBehaviour
 {
-    // TODO: 
+    // TODO: remove variable if single instance and have single call on one line.
     private SceneLoading _sl = new SceneLoading();
     public void RestartLevel()
     {
