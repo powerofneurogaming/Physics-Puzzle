@@ -829,7 +829,7 @@ PrefabInstance:
     - target: {fileID: 224868515205552935, guid: d9d61ff104d91b243a5b66634028b88d,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -31.906
+      value: -31.906006
       objectReference: {fileID: 0}
     - target: {fileID: 224868515205552935, guid: d9d61ff104d91b243a5b66634028b88d,
         type: 3}
@@ -955,6 +955,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224868516187164339, guid: d9d61ff104d91b243a5b66634028b88d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224868516501550750, guid: d9d61ff104d91b243a5b66634028b88d,
         type: 3}

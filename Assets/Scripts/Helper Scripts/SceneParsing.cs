@@ -3,24 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneEnumeration : MonoBehaviour
+public class SceneParsing // : MonoBehaviour
 {
 
-    public bool IsLevel(string scene)
+    public bool IsALevel(string scene)
     {
         if (scene.StartsWith("Level") )
             return true;
         return false;
     }
 
-    public bool IsWorld(string scene)
+    public bool IsAWorld(string scene)
     {
         if (scene.StartsWith("World"))
             return true;
         return false;
     }
 
-    public bool IsMainMenu()
+    public bool IsAMainMenu(string scene)
     {
         if (scene.StartsWith("Main Menu"))
             return true;
@@ -47,11 +47,12 @@ public class SceneEnumeration : MonoBehaviour
         return int.Parse(world);
     }
 
-    FindLevelFromWord(string scene, string levelType="Level")
+    public int FindLevelFromWord(string scene, string levelType="Level")
     {
         // Presuming the scene is in the format "[levelType] [levelNo]
-        string world = scene.Replace(levelType, "");
-        return int.Parse(world);
+        string levelNo = scene.Replace(levelType, ""); // " [levelNo]" - white space at least at beginning
+        levelNo = levelNo.Trim();
+        return int.Parse(levelNo);
     }
 
     public int FindWorldNumber(string scene)
@@ -59,18 +60,5 @@ public class SceneEnumeration : MonoBehaviour
         // Parsing scene in the format "World {worldNo]"
         string world = scene.Replace("World ", "");
         return int.Parse(world);
-    }
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
