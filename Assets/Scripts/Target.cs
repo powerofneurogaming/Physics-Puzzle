@@ -31,9 +31,9 @@ public class Target : MonoBehaviour
 			Debug.Log("Target bumped against another target. It's fine");
 			return; // we stop checking
 		}
-		
+
 		// We check if the target was collided from above just enough
-		if( collision.contacts[0].normal.y < -0.5 )
+		if (collision.contacts[0].normal.y < -0.5)
 		{
 			Debug.Log("Something that isn't a projectile or a target has destroyed the target from above!");
 			DestroyWithPuff();

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// TODO: Write unit test script and test this script
 public class SceneParsing // : MonoBehaviour
 {
 

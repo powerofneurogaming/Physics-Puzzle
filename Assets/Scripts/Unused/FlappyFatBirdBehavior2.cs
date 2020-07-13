@@ -18,7 +18,7 @@ public class FlappyFatBirdBehavior2 : MonoBehaviour
 	[SerializeField] private float _launchPower = 500;
 	// TODO: Remove _objectName and just use tags instead.
 	[SerializeField] private string _objectName = "Projectile";
-	private Vector3 _initialPosition;
+	private Vector3 _launchingPoint;
 	private string _currentSceneName;
 	private Rigidbody2D _rb2d;
 	private LineRenderer _lr;
@@ -42,8 +42,8 @@ public class FlappyFatBirdBehavior2 : MonoBehaviour
 		_launchCount = 0;
 		_currentSceneName = SceneManager.GetActiveScene().name;
 		// Set the position to position at start
-		_initialPosition = transform.position;
-		Debug.LogFormat("The initial position is {0}", _initialPosition);
+		_launchingPoint = transform.position;
+		Debug.LogFormat("The initial position is {0}", _launchingPoint);
 	}
     // Start is called before the first frame update
     private void Start()
@@ -56,7 +56,7 @@ public class FlappyFatBirdBehavior2 : MonoBehaviour
 	void Update()
 	{
 		_lr.SetPosition(0, transform.position);
-		_lr.SetPosition(1, _initialPosition);
+		_lr.SetPosition(1, _launchingPoint);
 
 
 		// of the object is moving at an incredibly slow rate after launching (namely hitting another object)
@@ -73,7 +73,7 @@ public class FlappyFatBirdBehavior2 : MonoBehaviour
 		_timeSittingAround > 3)
 		{ // transform.position.y > 10 ||
             ResetProjectile(); 
-			// transform.position = _initialPosition;  // Move back to the starting position
+			// transform.position = _launchingPoint;  // Move back to the starting position
 			// SceneManager.LoadScene(_currentSceneName); // reload current scene
         }
 	}
@@ -81,9 +81,9 @@ public class FlappyFatBirdBehavior2 : MonoBehaviour
     // Resets the position of the projectile, so it can be launched again
     private void ResetProjectile()
     {
-		// TODO: change _initialPosition to moving spawn point/launcher
+		// TODO: change _launchingPoint to moving spawn point/launcher
 		// Move back to the starting position
-		transform.position = _initialPosition;  
+		transform.position = _launchingPoint;  
 		_objectWasLaunched = false;
         _timeSittingAround = 0.0F;
 		// Set it still
@@ -129,7 +129,7 @@ public class FlappyFatBirdBehavior2 : MonoBehaviour
 		// Debug.LogFormat("The transform.position is {0}", transform.position);
 		// Since miving the object back puts it in a negative position compared to the start and we want positive force
 		// (in that case), we 
-		Vector2 directionToInitialPosition = _initialPosition - transform.position;
+		Vector2 directionToInitialPosition = _launchingPoint - transform.position;
 		// Debug.LogFormat("The directionToInitialPosition is {0}", directionToInitialPosition);
 		_rb2d.AddForce(directionToInitialPosition * _launchPower);
 		_rb2d.gravityScale = 1;
