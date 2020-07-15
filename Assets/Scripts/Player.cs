@@ -20,6 +20,8 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("Player has started!");
+        Debug.LogFormat("Object name of {0}", name);
         _rb = GetComponent<Rigidbody2D>();
     }
 

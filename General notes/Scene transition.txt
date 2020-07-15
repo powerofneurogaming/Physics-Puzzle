@@ -1,0 +1,25 @@
+
+Main menu	-> World Select
+			-> Options
+			-> Exit Game
+			
+World Select->	World 1
+			->	World 2
+			->	World ...
+			->	World n
+			->Main Menu
+			
+World [worldNo]	
+			->	Level 1
+			->	Level ...
+			->	Level n
+		
+level [worldNo]-[levelNo]
+		-> Reload
+		-> World [WorldNo]
+		-> 	if (not last level) 
+				Next level (Level [worldNo]-[LevelNo+1]
+			else if (next world exists)
+				Next level (Level [worldNo+1]-[1]
+			else
+				World [worldNo]

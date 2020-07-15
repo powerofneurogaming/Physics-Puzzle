@@ -37,6 +37,7 @@ public class Projectile : MonoBehaviour
 	private void Awake()
 	{
 		Debug.LogFormat("{0} has awakened!", _objectName);
+        Debug.LogFormat("Object name of {0}", name);
 		// Assign the GeComponent to the variables, so there aren't so many GeComponent calls.
 		_rb2d = GetComponent<Rigidbody2D>();
         _lr = GetComponent<LineRenderer>();
@@ -45,7 +46,6 @@ public class Projectile : MonoBehaviour
 		_launchCount = 0;
 		_currentSceneName = SceneManager.GetActiveScene().name;
 		// Set the position to position at start
-		// TODO: Set height variable for modification outside of class.
 		//Vector3 newPosition = Camera.main.ScreenToWorldPoint(player.transform.position); //.x, player.transform.y, player.transform.z);
 		// transform.position = newPosition; //new Vector3(newPosition.x, newPosition.y, 1);
 		PutProjectileAbovePlayer();
@@ -56,6 +56,7 @@ public class Projectile : MonoBehaviour
     private void Start()
     {
 		Debug.LogFormat("{0} has started!", _objectName);
+		Debug.LogFormat("Object name of {0}", name);
 	}
 
 
@@ -169,7 +170,8 @@ public class Projectile : MonoBehaviour
 	 */
 	private void PutProjectileAbovePlayer()
     {
-		SetProjectileLaunchingPoint();
+        // TODO: changes only when directional keys are held down - only needed when player is moving
+        SetProjectileLaunchingPoint();
 		MoveProjectileToLaunchingPoint();
 	}
 
@@ -179,7 +181,6 @@ public class Projectile : MonoBehaviour
      */
     private void ResetProjectile()
 	{
-		// TODO: change _launchingPoint to moving spawn point/launcher
 		// Move back to the starting position
 		transform.position = _launchingPoint;
 		_objectWasLaunched = false;
