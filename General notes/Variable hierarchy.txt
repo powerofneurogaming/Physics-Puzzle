@@ -1,0 +1,7 @@
+
+General variables
+	World
+		Level
+			projectile count
+			target count
+			score

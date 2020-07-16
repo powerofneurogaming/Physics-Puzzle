@@ -10,21 +10,31 @@ public class SceneLoading // : MonoBehaviour
 
     // Functions
     // Public
-
-    // Loads scene and returns true if it exists, otherwise returns false
-    public bool TryLoadingScene(string sceneName)
+    public bool CheckForScene(string sceneName)
     {
-        // Debug.Log("TryLoadingScene (from SceneLoadingHelper) has started!");
         if (Application.CanStreamedLevelBeLoaded(sceneName))
         {
             Debug.LogFormat("Found scene {0}! Now loading!", sceneName);
-            SceneManager.LoadScene(sceneName);
             return true;
         }
         else
         {
             Debug.LogFormat("Did not find scene {0}! Either it doesn't exist, or it isn't in the build.", sceneName);
         }
+
+        return false;
+    }
+
+    // Loads scene and returns true if it exists, otherwise returns false
+    public bool TryLoadingScene(string sceneName)
+    {
+        // Debug.Log("TryLoadingScene (from SceneLoadingHelper) has started!");
+        if (CheckForScene(sceneName))
+        {
+            SceneManager.LoadScene(sceneName);
+            return true;
+        }
+       
         return false;
     }
 
@@ -79,6 +89,32 @@ public class SceneLoading // : MonoBehaviour
             string nextWorldFirstLevel = $"Level {worldNo + 1}-1";
             if (TryLoadingScene(nextWorldFirstLevel))
                 return 2;
+        }
+
+        return 0;
+    }
+
+    public int LoadNextLevel(ref int worldNo, ref int levelNo)
+    {
+        int startingWorld = worldNo;
+        if (TryLoadingScene($"Level {worldNo}-{++levelNo}"))
+        {
+            return 1;
+        }
+        else
+        {
+            Debug.Log("Couldn't load the next level in this world's selection -likely the last level\n" +
+                "Trying to load the next world");
+            levelNo = 1;
+            if(TryLoadingScene($"Level {++worldNo}-{levelNo}"))
+            {
+                return 2;
+            }
+            else
+            {
+                Debug.Log("Couldn't load the next level. You've probably reached the end of the game!");
+                --worldNo;
+            }
         }
 
         return 0;

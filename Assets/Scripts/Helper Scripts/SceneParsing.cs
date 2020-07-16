@@ -27,9 +27,10 @@ public class SceneParsing // : MonoBehaviour
     public int FindLevelFromWord(string scene, string levelType)
     {
         // Presuming the scene is in the format "[levelType] [levelNo]
-        string levelNo = scene.Replace(levelType, ""); // " [levelNo]" - white space at least at beginning
-        levelNo = levelNo.Trim();
-        return int.Parse(levelNo);
+        string level = scene.Replace(levelType, ""); // " [levelNo]" - white space at least at beginning
+        level = level.Trim();
+        int.TryParse(level, out int levelNo); // convert it to integer
+        return levelNo;
     }
 
     public int FindLevelNumber(string scene)
@@ -41,7 +42,9 @@ public class SceneParsing // : MonoBehaviour
         int index = scene.IndexOf("-");
         string level = scene.Substring(index + 1);
         //string level = scene.Remove(0, index); // should be the level number
-        return int.Parse(level); // convert it to integer
+        //  int levelNo;
+        int.TryParse(level, out int levelNo); // convert it to integer
+        return levelNo;
     }
 
     public int FindWorldFromWordScene(string scene, string word)
@@ -51,7 +54,8 @@ public class SceneParsing // : MonoBehaviour
         world = world.Trim();
         int length = scene.IndexOf("-"); // due to indexing starting at 0 and the index being after what we want, it gives the length
         world = world.Substring(0, length); // [worldNo]
-        return int.Parse(world);
+        int.TryParse(world, out int worldNo); // convert it to integer
+        return worldNo;
     }
 
     public int FindWorldFromLevelScene(string scene)

@@ -1,0 +1,14 @@
+
+Player
+
+Reset -> scene.name
+
+NextLevel -> currentLevel
+			-> currentWorld
+
+Projectile -> player.position
+			-> levelconroller.projectileCount--
+			
+Targets ->	projectile (on contact)
+		->	levelController.targetcount--
+		

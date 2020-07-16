@@ -19,7 +19,9 @@ public class ParsingTests : MonoBehaviour
             Debug.Log("FindLevelFromWord failed to find the level!");
 
         if(_sp.FindWordInScene(testScene, "World"))
-            Debug.Log("FindLevelFromWord failed to find the level!");
+            Debug.Log("FindWordInScene found the \"World\"!");
+        else
+            Debug.Log("FindWordInScene didn't find the \"World\"!");
     }
 
     // Update is called once per frame
