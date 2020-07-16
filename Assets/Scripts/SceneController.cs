@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 /*
  * Class for maintaining commonly used information on the scene
  */
-public class SceneInfo : MonoBehaviour
+public class SceneController : MonoBehaviour
 {
     private SceneParsing _sp;
     private static int World = 0; // {get; set; }  //= 0; // 

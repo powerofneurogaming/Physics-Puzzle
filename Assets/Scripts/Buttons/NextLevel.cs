@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class NextLevel : MonoBehaviour
 {
-    public SceneInfo sceneInfo;
+    public SceneController SceneController;
 
     // private SceneParsing _sp = new SceneParsing();
     private SceneLoading _sl = new SceneLoading();
@@ -29,6 +29,6 @@ public class NextLevel : MonoBehaviour
         /*
         string currentSceneName = SceneManager.GetActiveScene().name;
         */
-        _sl.loadLevel(sceneInfo.getWorld(), sceneInfo.getLevel());
+        _sl.loadLevel(SceneController.getWorld(), SceneController.getLevel());
     }
 }
