@@ -23,9 +23,9 @@ public class LevelController : MonoBehaviour
     [SerializeField] private int targetTime = 120;
 
     // Counters for the playable levels, with default values
-    private int projectilesLeft = 6;
-    private int targetsLeft = 1;
-    private int targetsHit = 0;
+    private int _projectilesLeft = 6;
+    private int _targetsLeft = 3;
+    private int _targetsHit = 0;
 
     // For modifying the result button
     private GameObject _resultButton;
@@ -39,7 +39,7 @@ public class LevelController : MonoBehaviour
     private void OnEnable()
     {
         _targets = FindObjectsOfType<Target>();
-        targetsLeft = _targets.Count();
+        _targetsLeft = _targets.Count();
         // winText.text = "";
     }
 
@@ -90,7 +90,7 @@ public class LevelController : MonoBehaviour
                 "Shots bonus: \n" +
                 "Time bonus: \n" +
                 "Total: ",
-                targetsLeft);
+                _targetsLeft);
             */
         //}
         // We go to the next level
@@ -101,13 +101,33 @@ public class LevelController : MonoBehaviour
         */
     }
 
-    public string MakeResultText(bool isWin)
+    public void DecrementTargets()
+    {
+        _targetsLeft--;
+        if (_targetsLeft <= 0)
+            SetResultsButton(isWin: true, resultReason: "You fed all the customers!");
+    }
+
+    private void SetResultsButton(bool isWin, string resultReason)
+    {
+        _resultButton.SetActive(true);
+        _resultText.text = MakeResultText(isWin, resultReason);
+        // _resultButton.GetComponentInChildren<Text>().text = MakeResultText(isWin, resultReason);
+        // _resultButton.GetComponentText.text = MakeResultText(isWin, resultReason);
+        _levelComplete = true;
+    }
+
+    private string MakeResultText(bool isWin, string resultReason)
     {
         // Calculate the level bonuses
-        int targetBonus = targetsHit * targetMultiplyer;
-        int projectileBonus = projectilesLeft * projectileMultiplyer;
+        int targetBonus = _targetsHit * targetMultiplyer;
+        int projectileBonus = _projectilesLeft * projectileMultiplyer;
         float timeLeft = Math.Min(0.00F, targetTime - _totalTime);
-        float timeBonus = timeLeft * timeMultiplyer;
+        float timeBonus;
+        if (isWin)
+            timeBonus = timeLeft * timeMultiplyer;
+        else
+            timeBonus = 0;
         float totalScore = targetBonus + projectileBonus + timeBonus;
         // Then assign them
         string resultText;
@@ -116,25 +136,29 @@ public class LevelController : MonoBehaviour
         else
             resultText = "You lose!";
         // resultText = $"{buttonText}\n";
-        resultText += $"\nTargets hit: {targetsHit} x {targetMultiplyer} = {targetBonus}\n";
-        _ = $"Shots bonus: {projectilesLeft} x {projectileMultiplyer} = {projectileBonus}\n";
-        _ = $"Time bonus: {timeBonus} (target time of {targetTime}\n";
-        _ = $"Total: {totalScore}";
+        // TODO: condense code into one continuous line of appends, if possible.
+        resultText = resultText + resultReason;
+        resultText = resultText + $"\nTargets hit: {_targetsHit} x {targetMultiplyer} = {targetBonus}\n";
+        resultText = resultText + $"Shots bonus: {_projectilesLeft} x {projectileMultiplyer} = {projectileBonus}\n";
+        if(isWin)
+            resultText = resultText + $"Time bonus: {timeBonus} (target time of {targetTime}\n";
+        resultText = resultText + $"Total: {totalScore}";
+
         if (isWin)
         {
-            resultText = "Click to next level";
+            resultText = resultText + "Click for next level";
         }
         else
         {
             // TODO : Display text based on required win conditions, or auto lose condition
-            resultText = "Click to restart";
+            resultText = resultText + "Click to restart";
         }
         Debug.LogFormat("SetResult text returning a string of {0}", resultText);
         return resultText;
         // winText.text = resultText; 
         /* +
-            $"Targets hit: {targetsHit} x {targetMultiplyer} = {targetBonus}\n" +
-            $"Shots bonus: {projectilesLeft} x {projectileMultiplyer}\n" +
+            $"Targets hit: {_targetsHit} x {targetMultiplyer} = {targetBonus}\n" +
+            $"Shots bonus: {_projectilesLeft} x {projectileMultiplyer}\n" +
             $"Time bonus: {timeBonus}\n" +
             $"Total: {totalScore}";
         */
@@ -145,7 +169,7 @@ public class LevelController : MonoBehaviour
                 "Shots bonus: {2}\n" +
                 "Time bonus: {3}\n" +
                 "Total: ",
-                targetsLeft);
+                _targetsLeft);
         */
     }
 }
