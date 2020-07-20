@@ -9,19 +9,19 @@ public class Projectile : MonoBehaviour
     // Public:
     // External objects to modify
     public Player player;
+	public LevelController lc;
    // public UnityEngine.UI.Button winButton;
 	// Local:
 	// Currently not modified after Start function
 	// SerializeField enables variable to be adjusted in object inspector (under script variables.
 	// The variable name also displays with first letter capped, and spacing beween the first cap and previous letter.
-	[SerializeField] private int _projectilesLeft = 5;
+	// [SerializeField] private int _projectilesLeft = 5;
 	[SerializeField] private float _launchPower = 500;
 	[SerializeField] private float _projectileElevation = 5;
 	// TODO: Remove _objectName and just use tags instead.
 	[SerializeField] private string _objectName = "Projectile";
-	private Vector3 _launchingPoint;
-	private Vector3 _playerPosition;
-	private string _currentSceneName;
+	private Vector3 _launchingPoint, _playerPosition;
+    private string _currentSceneName;
 	private Rigidbody2D _rb2d;
 	private LineRenderer _lr;
 	private SpriteRenderer _sr;
@@ -181,6 +181,9 @@ public class Projectile : MonoBehaviour
      */
     private void ResetProjectile()
 	{
+		int projectilesLeft = lc.DecrementProjectiles();
+        Debug.Log($"There are {projectilesLeft} projectiles left");
+		// TODO: Deactivate projectiles when there are none left
 		// Move back to the starting position
 		transform.position = _launchingPoint;
 		_objectWasLaunched = false;

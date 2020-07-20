@@ -14,7 +14,7 @@ public class FlappyFatBirdBehavior2 : MonoBehaviour
 	// Currently not modified after Start function
 	// SerializeField enables variable to be adjusted in object inspector (under script variables.
 	// The variable name also displays with first letter capped, and spacing beween the first cap and previous letter.
-	[SerializeField] private int _projectilesLeft = 5;
+	// [SerializeField] private int _projectilesLeft = 5;
 	[SerializeField] private float _launchPower = 500;
 	// TODO: Remove _objectName and just use tags instead.
 	[SerializeField] private string _objectName = "Projectile";

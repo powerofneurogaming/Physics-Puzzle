@@ -28,14 +28,14 @@ public class SceneController : MonoBehaviour
         string currentScene = SceneManager.GetActiveScene().name;
         Debug.LogFormat("Getting info on scene {0}", currentScene);
         // check based on the most common levels
-        if(_sp.ContainsLevel(currentScene))
+        if(_sp.FindLevelWord(currentScene))
         {
-            World = _sp.FindWorldFromLevelScene(currentScene);
-            Level=_sp.FindLevelNumber(currentScene);
+            World = _sp.FindLevelFromScene(currentScene);  // runtime error starts here (in Level 1-1)
+            Level=_sp.FindWorldFromScene(currentScene);
         }
-        else if(_sp.ContainsWorld(currentScene))
+        else if(_sp.FindWorldWord(currentScene))
         {
-            World = _sp.FindWorldNumber(currentScene);
+            World = _sp.FindLevelFromScene(currentScene);
             Level = 1;
         }
         else
