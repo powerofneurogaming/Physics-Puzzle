@@ -14,9 +14,9 @@ public class ParsingTests : MonoBehaviour
         int actualWorldWorld = 2;
         int actualWorldLevel = 1;
         
-        // string levelScene = "Level 1-2";
-        // int actualLevelWorld = 1;
-        // int actualLevelLevel = 2;
+        string levelScene = "Level 1-2";
+        int actualLevelWorld = 1;
+        int actualLevelLevel = 2;
 
         Debug.Log($"Now testing the scene {worldScene} with the following functions");
         HelpCheckResults("FindWord", _sp.FindFirstWord(worldScene, "World"), true);
@@ -26,6 +26,15 @@ public class ParsingTests : MonoBehaviour
         HelpCheckResults("FindLevelFromScene", _sp.FindLevelFromScene(worldScene), actualWorldLevel);
         HelpCheckResults("FindWorldFromScene", _sp.FindWorldFromScene(worldScene), actualWorldWorld);
         HelpCheckResults("FindIfHasWorldLevel", _sp.FindIfHasWorldLevel(worldScene), true);
+
+        Debug.Log($"Now testing the scene {levelScene} with the following functions");
+        HelpCheckResults("FindWord", _sp.FindFirstWord(levelScene, "Level"), true);
+        HelpCheckResults("FindLevelWord", _sp.FindLevelWord(levelScene), true);
+        HelpCheckResults("FindWorldWord", _sp.FindWorldWord(levelScene), false);
+        HelpCheckResults("FindStartingWord", _sp.FindStartingWord(levelScene), "Level");
+        HelpCheckResults("FindLevelFromScene", _sp.FindLevelFromScene(levelScene), actualLevelLevel);
+        HelpCheckResults("FindWorldFromScene", _sp.FindWorldFromScene(levelScene), actualLevelWorld);
+        HelpCheckResults("FindIfHasWorldLevel", _sp.FindIfHasWorldLevel(levelScene), true);
     }
 
 

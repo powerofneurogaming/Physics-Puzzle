@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -9,7 +10,7 @@ public class LevelController : MonoBehaviour
 {
     // public variables
     // TODO: Since button cannot be targeted, have button target variables in this class
-    //  public Text winText;
+    public Text resultsText;
     public UnityEngine.UI.Button resultButton;
 
     // Private
@@ -35,7 +36,8 @@ public class LevelController : MonoBehaviour
 
     // For modifying the result button
     // private GameObject _resultButton;
-    private Text _resultText;
+    // private Text
+    private TextMeshProUGUI _resultText;
 
     // Used to target score
     private Target[] _targets;
@@ -50,7 +52,10 @@ public class LevelController : MonoBehaviour
         _targetsLeft--;
         _targetsHit++;
         if (_targetsLeft <= 0)
+        {
+            Debug.Log("targets counter has gone to 0 or below!");
             SetResultsButton(isWin: true, resultReason: "You fed all the customers!");
+        }
 
         return _targetsLeft;
     }
@@ -59,12 +64,16 @@ public class LevelController : MonoBehaviour
     {
         _projectilesLeft--;
         if (_projectilesLeft <= 0) // TODO: Change message to projectiles, if targets also are not "food eaters"
+        {
+            Debug.Log("Projectiles counter has gone to 0 or below!");
             SetResultsButton(isWin: false, resultReason: "You ran out of food!");
+        }
         return _projectilesLeft;
     }
 
     private void OnEnable()
     {
+        // _resultText = resultButton.GetComponentInChildren<Text>();
         // winText.text = "";
     }
 
@@ -84,7 +93,7 @@ public class LevelController : MonoBehaviour
                 break;
             default:
                 Debug.Log("Found the Result button!");
-                _resultText = resultButton.GetComponentInChildren<Text>();
+                // _resultText = resultButton.GetComponentInChildren<Text>();
                 resultButton.gameObject.SetActive(false);
                 break;
         }
@@ -97,7 +106,8 @@ public class LevelController : MonoBehaviour
         // increment timer
         if (!_levelComplete)
         {
-            _totalTime = Time.deltaTime;
+            // Debug.Log($"Level not yet completed. Time: [{_totalTime}]");
+            _totalTime += Time.deltaTime;
 
             // TODO; Edit so that the number of projectiles
             // Check if there is at least one target in the list of target objects
@@ -134,9 +144,21 @@ public class LevelController : MonoBehaviour
     private void SetResultsButton(bool isWin, string resultReason)
     {
         resultButton.gameObject.SetActive(true);
-        _resultText.text = MakeResultText(isWin, resultReason);
+
+        resultsText.text = MakeResultText(isWin, resultReason);
+
+        // _resultText = resultButton.GetComponentInChildren<TextMeshProUGUI>();
+        // Problem!: Cannot reference the button text properly. Keep getting the following error
+
+        // NullReferenceException: Object reference not set to an instance of an object LevelController.SetResultsButton(System.Boolean isWin, System.String resultReason);
+        // GameObject.Find("Result button/Result text").GetComponent<Text>().text = MakeResultText(isWin, resultReason);
+        // resultButton.GetComponentInChildren<Text>().text = MakeResultText(isWin, resultReason); // NullReferenceException: Object reference not set to an instance of an object LevelController.SetResultsButton(System.Boolean isWin, System.String resultReason);
+        // GameObject.Find("Result button/Result text").GetComponent<Text>().text = MakeResultText(isWin, resultReason);
+        // GameObject.Find("Result button").GetComponentInChildren<Text>().text = MakeResultText(isWin, resultReason);
+        // Ended testing here...
+        // _resultText.text = MakeResultText(isWin, resultReason);
         // resultButton.GetComponentInChildren<Text>().text = MakeResultText(isWin, resultReason);
-        // resultButton.GetComponentText.text = MakeResultText(isWin, resultReason);
+        //resultButton.GetComponent<Text>().text = MakeResultText(isWin, resultReason);
         _levelComplete = true;
     }
 
@@ -145,7 +167,7 @@ public class LevelController : MonoBehaviour
         // Calculate the level bonuses
         int targetBonus = _targetsHit * targetMultiplier;
         int projectileBonus = _projectilesLeft * projectileMultiplier;
-        float timeLeft = Math.Min(0.00F, targetTime - _totalTime);
+        float timeLeft = Math.Max(0.00F, targetTime - _totalTime);
         float timeBonus;
         if (isWin)
             timeBonus = timeLeft * timeMultiplier;
@@ -154,40 +176,47 @@ public class LevelController : MonoBehaviour
         float subTotal = targetBonus + projectileBonus + timeBonus;
         float totalScore = subTotal * difficulty;
         // Then put them in a string
-        string resultText;
+        string resultsText;
         if (isWin)
-            resultText = "You Win!";
+            resultsText = "You Win!";
         else
-            resultText = "You lose!";
+            resultsText = "You lose!";
         // resultText = $"{buttonText}\n";
         // TODO: condense code into one continuous line of appends, if possible.
-        resultText = resultText + resultReason;
-        resultText = resultText + $"\nTargets hit: {_targetsHit} x {targetMultiplier} = {targetBonus}\n";
+        resultsText = resultsText + $"\n{resultReason}";
+        resultsText = resultsText + $"\nTargets hit: {_targetsHit} x {targetMultiplier} = {targetBonus}\n";
 
         if (isWin)
         {
-            resultText = resultText + $"Shots bonus: {_projectilesLeft} x {projectileMultiplier} = {projectileBonus}\n";
-            resultText = resultText + $"Time bonus: {timeBonus} (target time of {targetTime}\n";
+            resultsText = resultsText + $"Shots bonus: {_projectilesLeft} x {projectileMultiplier} = {projectileBonus}\n";
+            resultsText = resultsText + "Time bonus: ";
+            if (_totalTime >= targetTime) // don't give the negative time - just give the time taken
+                resultsText = resultsText + $"0! Time taken: {_totalTime} seconds\n"
+                    + "You'll have to be quicker for this!";
+            else
+                resultsText = resultsText + $"({targetTime} - {_totalTime}) seconds X {timeMultiplier} = {timeBonus}";
+            resultsText = resultsText +$" (target time of {targetTime} seconds)\n";
         }
         else
-            resultText = $"You need to feed {_targetsLeft} more people next time!";
+            resultsText = $"You need to feed {_targetsLeft} more people next time!\n";
 
-        resultText = resultText + $"Difficulty multiplier: {subTotal} X {difficulty}\n";
-        resultText = resultText + $"Total: {totalScore}";
+        resultsText = resultsText + $"Difficulty multiplier: {subTotal} X {difficulty}\n" +
+            $"Total: {totalScore}\n";
+        // resultsText = resultsText + $"";
 
         if (isWin)
         {
-            resultText = resultText + "Click for next level";
+            resultsText = resultsText + "Click for next level";
             // TODO: Finish method for loading next level relative to scene
             // resultButton.onClick.AddListener();
         }
         else
         {
             // TODO : Display text based on required win conditions, or auto lose condition
-            resultText = resultText + "Click to restart";
+            resultsText = resultsText + "Click to restart";
         }
-        Debug.LogFormat("SetResult text returning a string of {0}", resultText);
-        return resultText;
+        Debug.LogFormat("SetResult text returning a string of {0}", resultsText);
+        return resultsText;
         // winText.text = resultText; 
         /* +
             $"Targets hit: {_targetsHit} x {targetMultiplier} = {targetBonus}\n" +

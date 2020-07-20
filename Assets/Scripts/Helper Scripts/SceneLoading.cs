@@ -68,7 +68,7 @@ public class SceneLoading // : MonoBehaviour
      */
     public int LoadWorldNo(int worldNo)
     {
-        string world = $"World {worldNo}";
+        string world = $"World {worldNo}-1";
         if (TryLoadingScene(world))
             return 1;
         else if (TryLoadingScene("Main Menu"))
@@ -94,6 +94,9 @@ public class SceneLoading // : MonoBehaviour
         return 0;
     }
 
+    // Attempt to load the next level, going to the next world if needed.
+    // Return: 1 if the level is in the current world, 2 if it's the next world,
+    // 0 if nothing was loaded.
     public int LoadNextLevel(ref int worldNo, ref int levelNo)
     {
         int startingWorld = worldNo;
