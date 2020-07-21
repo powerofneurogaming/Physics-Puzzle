@@ -94,33 +94,48 @@ public class SceneLoading // : MonoBehaviour
         return 0;
     }
 
-    // Attempt to load the next level, going to the next world if needed.
-    // Return: 1 if the level is in the current world, 2 if it's the next world,
+    // Attempt to load the next level of the scene type (namely Level or World), going to the next world if needed.
+    // Return: 1 if the scene type is in the current world, 2 if it's the next world,
     // 0 if nothing was loaded.
-    public int LoadNextLevel(ref int worldNo, ref int levelNo)
+    public int LoadNextSceneType(string sceneType, int worldNo, int levelNo)
     {
         int startingWorld = worldNo;
-        if (TryLoadingScene($"Level {worldNo}-{++levelNo}"))
+        if (TryLoadingScene($"{sceneType} {worldNo}-{++levelNo}"))
         {
             return 1;
         }
         else
         {
             Debug.Log("Couldn't load the next level in this world's selection -likely the last level\n" +
-                "Trying to load the next world");
+                $"Trying to load the next {sceneType}");
             levelNo = 1;
-            if(TryLoadingScene($"Level {++worldNo}-{levelNo}"))
+            if (TryLoadingScene($"{sceneType} {++worldNo}-{levelNo}"))
             {
                 return 2;
             }
             else
             {
-                Debug.Log("Couldn't load the next level. You've probably reached the end of the game!");
-                --worldNo;
+                Debug.Log($"Couldn't load the next {sceneType}. You've probably reached the end of the game!");
+                //--worldNo;
             }
         }
 
         return 0;
+    }
+
+    // Attempt to load the next level, going to the next world if needed.
+    // Return: 1 if the level is in the current world, 2 if it's the next world,
+    // 0 if nothing was loaded.
+    public int LoadNextLevel(int worldNo, int levelNo)
+    {
+        int startingWorld = worldNo;
+        return LoadNextSceneType(sceneType: "Level", worldNo, levelNo);
+    }
+
+    public int LoadNextWorld(int worldNo, int levelNo)
+    {
+        int startingWorld = worldNo;
+        return LoadNextSceneType(sceneType: "World", worldNo, levelNo);
     }
 }
 // }

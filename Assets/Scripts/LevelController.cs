@@ -10,8 +10,10 @@ public class LevelController : MonoBehaviour
 {
     // public variables
     // TODO: Since button cannot be targeted, have button target variables in this class
-    public Text resultsText;
-    public UnityEngine.UI.Button resultButton;
+    public Text resultsText, projectilesLeft;
+    public UnityEngine.UI.Button resultButton; 
+    public ReloadButton reloadButton;
+    public WorldController worldController;
 
     // Private
     // Static for the one instance ever within the game - only starts at given value once.
@@ -44,6 +46,8 @@ public class LevelController : MonoBehaviour
     private float _totalTime = 0.0F;
     private bool _levelComplete = false;
 
+    public int GetTargetsCount(){ return _targetsLeft; }
+    public int GetProjectilesCount() { return _projectilesLeft; }
     /*
      * Returns the number of targets left, after the reduction
      */
@@ -109,7 +113,7 @@ public class LevelController : MonoBehaviour
             // Debug.Log($"Level not yet completed. Time: [{_totalTime}]");
             _totalTime += Time.deltaTime;
 
-            // TODO; Edit so that the number of projectiles
+            // TODO; Edit to check the number of projectiles
             // Check if there is at least one target in the list of target objects
             foreach (Target target in _targets)
             {
@@ -180,7 +184,7 @@ public class LevelController : MonoBehaviour
         if (isWin)
             resultsText = "You Win!";
         else
-            resultsText = "You lose!";
+            resultsText = "Game over!";
         // resultText = $"{buttonText}\n";
         // TODO: condense code into one continuous line of appends, if possible.
         resultsText = resultsText + $"\n{resultReason}";
@@ -195,13 +199,16 @@ public class LevelController : MonoBehaviour
                     + "You'll have to be quicker for this!";
             else
                 resultsText = resultsText + $"({targetTime} - {_totalTime}) seconds X {timeMultiplier} = {timeBonus}";
-            resultsText = resultsText +$" (target time of {targetTime} seconds)\n";
+            resultsText = resultsText + $" (target time of {targetTime} seconds)\n";
         }
         else
+        {
+            resultsText = resultsText + $"Time taken: {_totalTime} seconds\n";
             resultsText = $"You need to feed {_targetsLeft} more people next time!\n";
+        }
 
         resultsText = resultsText + $"Difficulty multiplier: {subTotal} X {difficulty}\n" +
-            $"Total: {totalScore}\n";
+            $"Total: {totalScore}\n\n";
         // resultsText = resultsText + $"";
 
         if (isWin)
