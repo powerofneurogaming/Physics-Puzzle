@@ -10,10 +10,11 @@ public class LevelController : MonoBehaviour
 {
     // public variables
     // TODO: Since button cannot be targeted, have button target variables in this class
-    public Text resultsText, projectilesLeft;
-    public UnityEngine.UI.Button resultButton; 
-    public ReloadButton reloadButton;
-    public WorldController worldController;
+    public Text resultsText; // Appears when level is lossed or won
+    public Text projectilesLeftText, targetsLeftText; // Displayed in buttons
+    public UnityEngine.UI.Button resultButton; // For making the button disappear, reappear, & change behavior
+    // public ReloadButton reloadButton;
+    public SceneController sceneController;
 
     // Private
     // Static for the one instance ever within the game - only starts at given value once.
@@ -23,31 +24,32 @@ public class LevelController : MonoBehaviour
     // Multipliers for the score
     // free-play/practice, very easy, easy, normal, hard, very hard, near impossible - from 0 to 6
     [SerializeField] private int difficulty = 3; // normal
-    [SerializeField]  private int targetMultiplier = 100;
+    [SerializeField] private int targetMultiplier = 100;
     [SerializeField] private int projectileMultiplier = 100;
     [SerializeField] private int timeMultiplier = 100;
     [SerializeField] private int targetTime = 120;
+
+    private ReloadButton _rb = new ReloadButton();
 
     private int _projectilesPerTargets = 3; // 6 - difficulty
     // Counters for the playable levels, with default values
     // TODO: Assign number  of projectiles relative to the number of targets, and difficulty setting
     // _targetsLeft changes based on the actual number of targets in the scene during Start()
+    private int _projectilesStart = 9;
     private int _projectilesLeft = 9;
     private int _targetsLeft = 3;
+    private int _targetsStart = 3;
     private int _targetsHit = 0;
-
-    // For modifying the result button
-    // private GameObject _resultButton;
-    // private Text
-    private TextMeshProUGUI _resultText;
 
     // Used to target score
     private Target[] _targets;
     private float _totalTime = 0.0F;
     private bool _levelComplete = false;
 
-    public int GetTargetsCount(){ return _targetsLeft; }
+    public int GetTargetsCount() { return _targetsLeft; }
     public int GetProjectilesCount() { return _projectilesLeft; }
+
+
     /*
      * Returns the number of targets left, after the reduction
      */
@@ -55,6 +57,7 @@ public class LevelController : MonoBehaviour
     {
         _targetsLeft--;
         _targetsHit++;
+        SetCustomerCountText();
         if (_targetsLeft <= 0)
         {
             Debug.Log("targets counter has gone to 0 or below!");
@@ -67,12 +70,39 @@ public class LevelController : MonoBehaviour
     public int DecrementProjectiles()
     {
         _projectilesLeft--;
+        SetFoodCountText();
+
         if (_projectilesLeft <= 0) // TODO: Change message to projectiles, if targets also are not "food eaters"
         {
             Debug.Log("Projectiles counter has gone to 0 or below!");
             SetResultsButton(isWin: false, resultReason: "You ran out of food!");
         }
         return _projectilesLeft;
+    }
+
+    private void SetCountdownText(Text textBox, int countCurrent, int countStart, string counterType = "Customers")
+    {
+        // projectilesLeftText.text = $"Projectiles left: {_projectilesLeft} / {_projectilesStart}";
+        textBox.text = $"{counterType} left: {countCurrent} / {countStart}";
+    }
+
+    private void SetFoodCountText()
+    {
+        SetCountdownText(textBox: projectilesLeftText, countCurrent: _projectilesLeft, countStart: _projectilesStart, counterType: "Food");
+        return;
+    }
+
+    private void SetCustomerCountText()
+    {
+        // targetsLeftText.text = $"Customers left: {_targetsLeft} / {_targetsStart}";
+        SetCountdownText(textBox: targetsLeftText, countCurrent: _targetsLeft, countStart: _targetsStart, counterType: "Customers");
+        return;
+    }
+
+    private void SetCountTexts()
+    {
+        SetFoodCountText();
+        SetCustomerCountText();
     }
 
     private void OnEnable()
@@ -85,9 +115,12 @@ public class LevelController : MonoBehaviour
     private void Start()
     {
         _targets = FindObjectsOfType<Target>();
-        _targetsLeft = _targets.Count();
-        _projectilesPerTargets = 6 - difficulty;
-        _projectilesLeft = _targetsLeft * _projectilesPerTargets;
+        _targetsLeft = _targetsStart = _targets.Count();
+        _projectilesPerTargets = Math.Max(1, 6 - difficulty);
+        _projectilesLeft = _projectilesStart = _targetsLeft * _projectilesPerTargets;
+
+        SetCountTexts();
+
         // Button in this specific path, based on the Hierarchy view, will be returned.
         // resultButton = GameObject.Find("/Canvas/Result button");
         switch (resultButton)
@@ -170,7 +203,7 @@ public class LevelController : MonoBehaviour
     {
         // Calculate the level bonuses
         int targetBonus = _targetsHit * targetMultiplier;
-        int projectileBonus = _projectilesLeft * projectileMultiplier;
+        int projectileBonus = Math.Max(0, _projectilesLeft) * projectileMultiplier;
         float timeLeft = Math.Max(0.00F, targetTime - _totalTime);
         float timeBonus;
         if (isWin)
@@ -184,7 +217,7 @@ public class LevelController : MonoBehaviour
         if (isWin)
             resultsText = "You Win!";
         else
-            resultsText = "Game over!";
+            resultsText = "Game Over!";
         // resultText = $"{buttonText}\n";
         // TODO: condense code into one continuous line of appends, if possible.
         resultsText = resultsText + $"\n{resultReason}";
@@ -204,7 +237,7 @@ public class LevelController : MonoBehaviour
         else
         {
             resultsText = resultsText + $"Time taken: {_totalTime} seconds\n";
-            resultsText = $"You need to feed {_targetsLeft} more people next time!\n";
+            resultsText = resultsText + $"You need to feed {_targetsLeft} more people next time!\n";
         }
 
         resultsText = resultsText + $"Difficulty multiplier: {subTotal} X {difficulty}\n" +
@@ -215,12 +248,13 @@ public class LevelController : MonoBehaviour
         {
             resultsText = resultsText + "Click for next level";
             // TODO: Finish method for loading next level relative to scene
-            // resultButton.onClick.AddListener();
+            resultButton.onClick.AddListener(() => sceneController.GoToNextLevel());
         }
         else
         {
             // TODO : Display text based on required win conditions, or auto lose condition
             resultsText = resultsText + "Click to restart";
+            resultButton.onClick.AddListener(()=> sceneController.RestartLevel());
         }
         Debug.LogFormat("SetResult text returning a string of {0}", resultsText);
         return resultsText;

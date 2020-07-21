@@ -24,6 +24,15 @@ public class SceneController : MonoBehaviour
     public int getLevel() { return Level; }
     public void setLevel(int newLevel) => Level = newLevel;
 
+    // TODO: Replace ReloadButton with direct to SceneController & this function
+    public void RestartLevel()
+    {
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        Debug.LogFormat("Reloading scene {0}", currentSceneName);
+        _sl.TryLoadingScene(currentSceneName);
+        // SceneManager.LoadScene(currentSceneName);
+    }
+
     //Almost the same as SceneLoading's LoadNextLevel, but it takes in the inputs
     public void GoToNextLevel()
     {
