@@ -84,10 +84,8 @@ public class Projectile : MonoBehaviour
 
 		// Reset position when object moves too far to the side or down, or effectively stops moving.
 		// TODO: Make x ( and possibly y) range either wider, dependent on a moving camera, or both.
-		if (transform.position.x > 20 ||
-		transform.position.x < -20 ||
-		transform.position.y < -10 ||
-		_timeSittingAround > 3)
+		if (transform.position.y < -10 ||
+		_timeSittingAround > 3)  // transform.position.x > 20 ||transform.position.x < -20 ||
 		{ // transform.position.y > 10 ||
             ResetProjectile(); 
 			// transform.position = _launchingPoint;  // Move back to the starting position
