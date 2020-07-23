@@ -181,6 +181,10 @@ public class Projectile : MonoBehaviour
 	{
 		int projectilesLeft = lc.DecrementProjectiles();
         Debug.Log($"There are {projectilesLeft} projectiles left");
+		if(projectilesLeft<=0)
+        {
+            this.gameObject.SetActive(false);
+        }
 		// TODO: Deactivate projectiles when there are none left
 		// Move back to the starting position
 		transform.position = _launchingPoint;

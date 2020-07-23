@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7913596250858378075
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5569188380267323760, guid: 18f6d070a1f96a845883efd063ec55f3,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569188380267323762, guid: 18f6d070a1f96a845883efd063ec55f3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -15.363546
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569188380267323762, guid: 18f6d070a1f96a845883efd063ec55f3,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.9019152
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569188380267323762, guid: 18f6d070a1f96a845883efd063ec55f3,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569188380267323762, guid: 18f6d070a1f96a845883efd063ec55f3,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569188380267323762, guid: 18f6d070a1f96a845883efd063ec55f3,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569188380267323762, guid: 18f6d070a1f96a845883efd063ec55f3,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569188380267323762, guid: 18f6d070a1f96a845883efd063ec55f3,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569188380267323762, guid: 18f6d070a1f96a845883efd063ec55f3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569188380267323762, guid: 18f6d070a1f96a845883efd063ec55f3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569188380267323762, guid: 18f6d070a1f96a845883efd063ec55f3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569188380267323762, guid: 18f6d070a1f96a845883efd063ec55f3,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569188380267323763, guid: 18f6d070a1f96a845883efd063ec55f3,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.9622642
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569188380267323763, guid: 18f6d070a1f96a845883efd063ec55f3,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.05900679
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569188380267323763, guid: 18f6d070a1f96a845883efd063ec55f3,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.05900679
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569188380267323774, guid: 18f6d070a1f96a845883efd063ec55f3,
+        type: 3}
+      propertyPath: m_Name
+      value: Grill (kinematic)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5569188380267323774, guid: 18f6d070a1f96a845883efd063ec55f3,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 18f6d070a1f96a845883efd063ec55f3, type: 3}

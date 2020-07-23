@@ -15,6 +15,7 @@ public class LevelController : MonoBehaviour
     public UnityEngine.UI.Button resultButton; // For making the button disappear, reappear, & change behavior
     // public ReloadButton reloadButton;
     public SceneController sceneController;
+    public ReloadButton reloadButton;
 
     // Private
     // Static for the one instance ever within the game - only starts at given value once.
@@ -254,7 +255,7 @@ public class LevelController : MonoBehaviour
         {
             // TODO : Display text based on required win conditions, or auto lose condition
             resultsText = resultsText + "Click to restart";
-            resultButton.onClick.AddListener(()=> sceneController.RestartLevel());
+            resultButton.onClick.AddListener(()=> reloadButton.RestartLevel());
         }
         Debug.LogFormat("SetResult text returning a string of {0}", resultsText);
         return resultsText;
