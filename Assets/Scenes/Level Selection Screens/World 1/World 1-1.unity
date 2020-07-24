@@ -1114,7 +1114,7 @@ GameObject:
   - component: {fileID: 1742297371}
   - component: {fileID: 1742297370}
   m_Layer: 5
-  m_Name: PreviousLevel Select Button
+  m_Name: Previous Level Select Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

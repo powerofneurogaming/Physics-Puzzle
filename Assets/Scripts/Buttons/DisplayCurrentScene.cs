@@ -10,7 +10,9 @@ public class DisplayCurrentScene : MonoBehaviour
     void Start()
     {
         string currentSceneName = SceneManager.GetActiveScene().name;
-        gameObject.GetComponent<Text>().text = currentSceneName;
+        Text displayedText = GetComponent<Text>();
+        // gameObject.GetComponent<Text>()
+        displayedText.text = currentSceneName;
        // GetComponent<Text>().text = ""
     }
 }
