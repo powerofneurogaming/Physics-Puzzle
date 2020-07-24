@@ -39,6 +39,12 @@ public class SceneController : MonoBehaviour
         _sl.LoadNextLevel(worldNo: World, levelNo: Level);
     }
 
+    public void GoToCurrentWorld()
+    {
+        _sl.LoadWorldNo(World);
+    }
+
+
     public void LoadPreviousScene()
     {
         _sl.TryLoadingScene(sceneName: _previousScene);
@@ -47,7 +53,7 @@ public class SceneController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Seet the world values upon starting - i.e. every time a scene is loaded
+        // Set the world values upon starting - i.e. every time a scene is loaded
         // _sp = new SceneParsing();
 
         // next is used temporarily, in relation to the previous scenes we've loaded

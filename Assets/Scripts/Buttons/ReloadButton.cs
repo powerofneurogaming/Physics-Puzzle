@@ -13,9 +13,4 @@ public class ReloadButton : MonoBehaviour
         _sl.TryLoadingScene(currentSceneName);
         // SceneManager.LoadScene(currentSceneName);
     }
-    // Update is called once per frame
-    /*void Update()
-    {
-        
-    } */
 }

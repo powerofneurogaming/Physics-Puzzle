@@ -30,7 +30,7 @@ public class LevelController : MonoBehaviour
     [SerializeField] private int timeMultiplier = 100;
     [SerializeField] private int targetTime = 120;
 
-    private ReloadButton _rb = new ReloadButton();
+    // private ReloadButton _rb = new ReloadButton();
 
     private int _projectilesPerTargets = 3; // 6 - difficulty
     // Counters for the playable levels, with default values
@@ -146,37 +146,7 @@ public class LevelController : MonoBehaviour
         {
             // Debug.Log($"Level not yet completed. Time: [{_totalTime}]");
             _totalTime += Time.deltaTime;
-
-            // TODO; Edit to check the number of projectiles
-            // Check if there is at least one target in the list of target objects
-            foreach (Target target in _targets)
-            {
-                if (target != null)
-                    return; // stops here if there is at least one target
-            }
-            // This part only reached when there are no targets found
-            Debug.Log("All the targets are gone!");
-            // We enable going to the next level
-            //if (!_levelComplete)
-            //{
-
-            _levelComplete = true;
         }
-            /*
-            winText.text = String.Format("You win!\n" +
-                "Targets hit: {0}\n" +
-                "Shots bonus: \n" +
-                "Time bonus: \n" +
-                "Total: ",
-                _targetsLeft);
-            */
-        //}
-        // We go to the next level
-        /*
-        _nextLevelIndex++;
-        string nextLevelName = "Level" + _nextLevelIndex;
-        SceneManager.LoadScene(nextLevelName);
-        */
     }
 
     private void SetResultsButton(bool isWin, string resultReason)
@@ -184,19 +154,6 @@ public class LevelController : MonoBehaviour
         resultButton.gameObject.SetActive(true);
 
         resultsText.text = MakeResultText(isWin, resultReason);
-
-        // _resultText = resultButton.GetComponentInChildren<TextMeshProUGUI>();
-        // Problem!: Cannot reference the button text properly. Keep getting the following error
-
-        // NullReferenceException: Object reference not set to an instance of an object LevelController.SetResultsButton(System.Boolean isWin, System.String resultReason);
-        // GameObject.Find("Result button/Result text").GetComponent<Text>().text = MakeResultText(isWin, resultReason);
-        // resultButton.GetComponentInChildren<Text>().text = MakeResultText(isWin, resultReason); // NullReferenceException: Object reference not set to an instance of an object LevelController.SetResultsButton(System.Boolean isWin, System.String resultReason);
-        // GameObject.Find("Result button/Result text").GetComponent<Text>().text = MakeResultText(isWin, resultReason);
-        // GameObject.Find("Result button").GetComponentInChildren<Text>().text = MakeResultText(isWin, resultReason);
-        // Ended testing here...
-        // _resultText.text = MakeResultText(isWin, resultReason);
-        // resultButton.GetComponentInChildren<Text>().text = MakeResultText(isWin, resultReason);
-        //resultButton.GetComponent<Text>().text = MakeResultText(isWin, resultReason);
         _levelComplete = true;
     }
 
@@ -255,25 +212,9 @@ public class LevelController : MonoBehaviour
         {
             // TODO : Display text based on required win conditions, or auto lose condition
             resultsText = resultsText + "Click to restart";
-            resultButton.onClick.AddListener(()=> reloadButton.RestartLevel());
+            resultButton.onClick.AddListener(()=> reloadButton.GetComponent<ReloadButton>().RestartLevel());
         }
         Debug.LogFormat("SetResult text returning a string of {0}", resultsText);
         return resultsText;
-        // winText.text = resultText; 
-        /* +
-            $"Targets hit: {_targetsHit} x {targetMultiplier} = {targetBonus}\n" +
-            $"Shots bonus: {_projectilesLeft} x {projectileMultiplier}\n" +
-            $"Time bonus: {timeBonus}\n" +
-            $"Total: {totalScore}";
-        */
-
-        /*
-        winText.text = String.Format("{0}\n" +
-                "Targets hit: {1} x {} = {2}\n" +
-                "Shots bonus: {2}\n" +
-                "Time bonus: {3}\n" +
-                "Total: ",
-                _targetsLeft);
-        */
     }
 }

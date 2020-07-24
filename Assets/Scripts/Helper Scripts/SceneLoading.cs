@@ -1,10 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-//namespace SceneLoading
-//{
-// TODO: Due to loading a scene stopping any further code (as well as the debug logs),
-// look for alternate method of getting results if needed (possibly static values)
 public class SceneLoading // : MonoBehaviour
 {
 
@@ -107,7 +103,7 @@ public class SceneLoading // : MonoBehaviour
         else
         {
             Debug.Log("Couldn't load the next level in this world's selection -likely the last level\n" +
-                $"Trying to load the next {sceneType}");
+                $"Trying to load the next {sceneType}'s World");
             levelNo = 1;
             if (TryLoadingScene($"{sceneType} {++worldNo}-{levelNo}"))
             {
@@ -115,7 +111,8 @@ public class SceneLoading // : MonoBehaviour
             }
             else
             {
-                Debug.Log($"Couldn't load the next {sceneType}. You've probably reached the end of the game!");
+                Debug.Log($"Couldn't load the next {sceneType}'s World's first level. \n" +
+                    $"You've probably reached the end of the selection, or game!");
                 //--worldNo;
             }
         }

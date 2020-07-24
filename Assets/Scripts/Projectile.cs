@@ -10,6 +10,7 @@ public class Projectile : MonoBehaviour
     // External objects to modify
     public Player player;
 	public LevelController lc;
+	public UnityEngine.UI.Button reloadProjectileButton;
    // public UnityEngine.UI.Button winButton;
 	// Local:
 	// Currently not modified after Start function
@@ -31,13 +32,41 @@ public class Projectile : MonoBehaviour
 	private float _timeSittingAround;
     private int _launchCount;
 
+	// Non-Monobehavior functions
+	/* 
+     * Resets the position of the projectile, so it can be launched again
+     */
+	public void ResetProjectile()
+	{
+		int projectilesLeft = lc.DecrementProjectiles();
+		Debug.Log($"There are {projectilesLeft} projectiles left");
+		if (projectilesLeft <= 0)
+		{
+			this.gameObject.SetActive(false);
+		}
+		// TODO: Deactivate projectiles when there are none left
+		// Move back to the starting position
+		transform.position = _launchingPoint;
+		_objectWasLaunched = false;
+		_objectDragged = false;
+		_timeSittingAround = 0.0F;
+		// Set it still
+		_rb2d.gravityScale = 0;
+		_rb2d.velocity = new Vector3(0, 0, 0);
+		_rb2d.angularVelocity = 0.0F; // new Vector3(0, 0, 0);
+		transform.rotation = Quaternion.Euler(0, 0, 0);
+		reloadProjectileButton.gameObject.SetActive(false);
+	}
+
 	// Functions automatically called as object behavior - MonoBehavior	
 
-	// Called right before Start function, commonly used to set 
+	// Called right before Start function upon the object be activated.
+	// Runs even before Start (?)
 	private void Awake()
 	{
 		Debug.LogFormat("{0} has awakened!", _objectName);
         Debug.LogFormat("Object name of {0}", name);
+		reloadProjectileButton.gameObject.SetActive(false);
 		// Assign the GeComponent to the variables, so there aren't so many GeComponent calls.
 		_rb2d = GetComponent<Rigidbody2D>();
         _lr = GetComponent<LineRenderer>();
@@ -93,8 +122,23 @@ public class Projectile : MonoBehaviour
         }
 	}
 
-	// When the projectile is clicked
-	private void OnMouseDown()
+    /*
+	private void OnGUI()
+    {
+		if(_objectWasLaunched)
+        {
+			Vector3 newPosition = Camera.main.ScreenToWorldPoint(_launchingPoint);
+			if (GUI.Button (new Rect (newPosition.x, newPosition.y, 100, 40), "Click for next projectile"))
+            {
+				ResetProjectile();
+            }
+        }
+
+	}
+	*/
+
+    // When the projectile is clicked
+    private void OnMouseDown()
     {
 		if (!_objectWasLaunched)
 		{
@@ -115,20 +159,15 @@ public class Projectile : MonoBehaviour
 			_objectDragged = true;
 			Vector3 newPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			transform.position = new Vector3(newPosition.x, newPosition.y, 1);
-		}
-		
-        // Changes the position, but the position is based on the camera's z position so the bird fades into it. 
-        // transform.position = newPosition;
-
-        // Moves bird in front and above mouse.
-        // transform.position = Input.mousePosition; // mouse position is from the bottom-left corner while object position is from center of screen
-    }
+		}    
+	}
 
     // When the mouse button is released - after clicking
     private void OnMouseUp()
     {
 		if (!_objectWasLaunched)
 		{
+			reloadProjectileButton.gameObject.SetActive(true);
 			// Disable line
 			_lr.enabled = false;
 			// Turn it white (original color)
@@ -137,7 +176,7 @@ public class Projectile : MonoBehaviour
 			Debug.LogFormat("The projectile has been launched {0} times now", _launchCount);
 			// Launch the object
 			// Debug.LogFormat("The transform.position is {0}", transform.position);
-			// Since miving the object back puts it in a negative position compared to the start and we want positive force
+			// Since moving the object back puts it in a negative position compared to the start and we want positive force
 			// (in that case), we 
 			Vector2 directionToInitialPosition = _launchingPoint - transform.position;
 			// Debug.LogFormat("The directionToInitialPosition is {0}", directionToInitialPosition);
@@ -171,31 +210,6 @@ public class Projectile : MonoBehaviour
         // TODO: changes only when directional keys are held down - only needed when player is moving
         SetProjectileLaunchingPoint();
 		MoveProjectileToLaunchingPoint();
-	}
-
-    // Non-Monobehavior functions
-    /* 
-     * Resets the position of the projectile, so it can be launched again
-     */
-    private void ResetProjectile()
-	{
-		int projectilesLeft = lc.DecrementProjectiles();
-        Debug.Log($"There are {projectilesLeft} projectiles left");
-		if(projectilesLeft<=0)
-        {
-            this.gameObject.SetActive(false);
-        }
-		// TODO: Deactivate projectiles when there are none left
-		// Move back to the starting position
-		transform.position = _launchingPoint;
-		_objectWasLaunched = false;
-		_objectDragged = false;
-		_timeSittingAround = 0.0F;
-		// Set it still
-		_rb2d.gravityScale = 0;
-		_rb2d.velocity = new Vector3(0, 0, 0);
-		_rb2d.angularVelocity = 0.0F; // new Vector3(0, 0, 0);
-		transform.rotation = Quaternion.Euler(0, 0, 0);
 	}
 }
 

@@ -20,6 +20,7 @@ public class Target : MonoBehaviour
 		{
 			// Destroy the current object
 			Debug.Log("The projectile has destroyed the target!");
+			projectile.ResetProjectile();
 			DestroyWithPuff();
 			return;
 		}
@@ -28,7 +29,7 @@ public class Target : MonoBehaviour
 		Target target = collision.collider.GetComponent<Target>();
 		if (target != null)
 		{
-			Debug.Log("Target bumped against another target. It's fine");
+			// Debug.Log("Target bumped against another target. It's fine");
 			return; // we stop checking
 		}
 

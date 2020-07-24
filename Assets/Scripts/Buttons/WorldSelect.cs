@@ -11,9 +11,4 @@ public class WorldSelect : MonoBehaviour
         _sl.TryLoadingScene("World Select");
         // SceneManager.LoadScene("World Select");
     }
-    // Update is called once per frame
-    /*void Update()
-    {
-        
-    } */
 }
