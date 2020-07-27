@@ -211,7 +211,7 @@ SpriteRenderer:
   m_Size: {x: 18, y: 8.75}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1001 &213544583
@@ -1060,6 +1060,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Options
       objectReference: {fileID: 0}
+    - target: {fileID: 2809670234605540340, guid: 89ba72a06c015814d9f8d08498005096,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2809670234605540341, guid: 89ba72a06c015814d9f8d08498005096,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1104,6 +1109,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3442245651439231108, guid: 89ba72a06c015814d9f8d08498005096,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3442245651587702942, guid: 89ba72a06c015814d9f8d08498005096,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3442245652518755503, guid: 89ba72a06c015814d9f8d08498005096,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3442245652679185834, guid: 89ba72a06c015814d9f8d08498005096,
         type: 3}
@@ -1253,6 +1273,26 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3442245652910885981, guid: 89ba72a06c015814d9f8d08498005096,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3442245652923804614, guid: 89ba72a06c015814d9f8d08498005096,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3442245652985714165, guid: 89ba72a06c015814d9f8d08498005096,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7393179538107283869, guid: 89ba72a06c015814d9f8d08498005096,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8780205679037148279, guid: 89ba72a06c015814d9f8d08498005096,
         type: 3}
       propertyPath: m_IsActive
       value: 0
