@@ -408,7 +408,7 @@ Transform:
   - {fileID: 407468315}
   - {fileID: 335465773}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &335465773 stripped
 Transform:
@@ -778,6 +778,75 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1971380509}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1432623330
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8714705301943140452, guid: 2b2c86af7d11e1646829f23520abcbbb,
+        type: 3}
+      propertyPath: m_Name
+      value: Behihanas Background
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714705301943140454, guid: 2b2c86af7d11e1646829f23520abcbbb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.2894728
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714705301943140454, guid: 2b2c86af7d11e1646829f23520abcbbb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.19736826
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714705301943140454, guid: 2b2c86af7d11e1646829f23520abcbbb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714705301943140454, guid: 2b2c86af7d11e1646829f23520abcbbb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714705301943140454, guid: 2b2c86af7d11e1646829f23520abcbbb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714705301943140454, guid: 2b2c86af7d11e1646829f23520abcbbb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714705301943140454, guid: 2b2c86af7d11e1646829f23520abcbbb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714705301943140454, guid: 2b2c86af7d11e1646829f23520abcbbb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714705301943140454, guid: 2b2c86af7d11e1646829f23520abcbbb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714705301943140454, guid: 2b2c86af7d11e1646829f23520abcbbb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8714705301943140454, guid: 2b2c86af7d11e1646829f23520abcbbb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2b2c86af7d11e1646829f23520abcbbb, type: 3}
 --- !u!4 &1550614904 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3280401746512850377, guid: 383ed69ab10af5044b3f758738e32c82,
@@ -848,7 +917,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1655944080 stripped
 MonoBehaviour:
@@ -905,7 +974,7 @@ Transform:
   - {fileID: 1295944920}
   - {fileID: 1550614904}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1971380509
 PrefabInstance:
@@ -1159,6 +1228,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cloudy Background
+      objectReference: {fileID: 0}
+    - target: {fileID: 694987561521594098, guid: 5703fefefbbe6f94e96ca146ecc77d13,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5703fefefbbe6f94e96ca146ecc77d13, type: 3}
