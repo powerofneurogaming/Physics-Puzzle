@@ -81,6 +81,14 @@ public class LevelController : MonoBehaviour
         return _projectilesLeft;
     }
 
+    public void SetResultsButton(bool isWin, string resultReason)
+    {
+        resultButton.gameObject.SetActive(true);
+
+        resultsText.text = MakeResultText(isWin, resultReason);
+        _levelComplete = true;
+    }
+
     private void SetCountdownText(Text textBox, int countCurrent, int countStart, string counterType = "Customers")
     {
         // projectilesLeftText.text = $"Projectiles left: {_projectilesLeft} / {_projectilesStart}";
@@ -147,14 +155,6 @@ public class LevelController : MonoBehaviour
             // Debug.Log($"Level not yet completed. Time: [{_totalTime}]");
             _totalTime += Time.deltaTime;
         }
-    }
-
-    private void SetResultsButton(bool isWin, string resultReason)
-    {
-        resultButton.gameObject.SetActive(true);
-
-        resultsText.text = MakeResultText(isWin, resultReason);
-        _levelComplete = true;
     }
 
     private string MakeResultText(bool isWin, string resultReason)

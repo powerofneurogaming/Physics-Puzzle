@@ -52,10 +52,18 @@ public class Projectile : MonoBehaviour
 		_timeSittingAround = 0.0F;
 		// Set it still
 		_rb2d.gravityScale = 0;
-		_rb2d.velocity = new Vector3(0, 0, 0);
-		_rb2d.angularVelocity = 0.0F; // new Vector3(0, 0, 0);
+		SetVelocitiesToZero();
 		transform.rotation = Quaternion.Euler(0, 0, 0);
 		reloadProjectileButton.gameObject.SetActive(false);
+	}
+
+	/*
+	 * Need to set velocity to zero constantly as any external forces cause
+	 */
+	private void SetVelocitiesToZero()
+    {
+		_rb2d.velocity = new Vector3(0, 0, 0);
+		_rb2d.angularVelocity = 0.0F; // new Vector3(0, 0, 0);
 	}
 
 	// Functions automatically called as object behavior - MonoBehavior	
@@ -167,6 +175,7 @@ public class Projectile : MonoBehaviour
     {
 		if (!_objectWasLaunched)
 		{
+			// _rb2d.isKinematic = false;
 			reloadProjectileButton.gameObject.SetActive(true);
 			// Disable line
 			_lr.enabled = false;
@@ -199,6 +208,7 @@ public class Projectile : MonoBehaviour
 
 	private void MoveProjectileToLaunchingPoint()
     {
+		SetVelocitiesToZero();
 		transform.position = _launchingPoint;
 	}
 
@@ -207,7 +217,9 @@ public class Projectile : MonoBehaviour
 	 */
 	private void PutProjectileAbovePlayer()
     {
-        // TODO: changes only when directional keys are held down - only needed when player is moving
+		// TODO: changes only when directional keys are held down - only needed when player is moving
+		// _rb2d.isKinematic = false;
+		// _rb2d.collisionDetectionMode = 
         SetProjectileLaunchingPoint();
 		MoveProjectileToLaunchingPoint();
 	}

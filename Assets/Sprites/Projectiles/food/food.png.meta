@@ -16,18 +16,45 @@ TextureImporter:
     second: carrot
   - first:
       213: 3783751772801332867
-    second: food_4
+    second: steam_1
   - first:
       213: 3766231896858906920
-    second: food_5
+    second: steam_2
   - first:
       213: 2806712619628358444
-    second: food_6
+    second: steam_3
   - first:
       213: 6284960523649584348
     second: g_grapes
   - first:
       213: 9134550221621171518
+    second: steak
+  - first:
+      213: -937519870473542992
+    second: apple
+  - first:
+      213: -2611463999402340258
+    second: cheese
+  - first:
+      213: 7051831185166469209
+    second: lemon
+  - first:
+      213: -3940661646514917984
+    second: carrot
+  - first:
+      213: -1895601736595522597
+    second: steam_1
+  - first:
+      213: 4676005002421058008
+    second: steam_2
+  - first:
+      213: 2518240404923874052
+    second: steam_3
+  - first:
+      213: 6579235118326026221
+    second: grapes
+  - first:
+      213: 5424232260100854918
     second: steak
   externalObjects: {}
   serializedVersion: 11
@@ -158,14 +185,14 @@ TextureImporter:
         width: 27
         height: 31
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d206cd17335ce71f0800000000000000
-      internalID: -1045181238759104467
+      spriteID: 0b2ed8e15a24df2f0800000000000000
+      internalID: -937519870473542992
       vertices: []
       indices: 
       edges: []
@@ -179,14 +206,14 @@ TextureImporter:
         width: 35
         height: 31
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f65d49b85bf774a20800000000000000
-      internalID: 3046544090647025007
+      spriteID: e5017e3245732cbd0800000000000000
+      internalID: -2611463999402340258
       vertices: []
       indices: 
       edges: []
@@ -200,14 +227,14 @@ TextureImporter:
         width: 35
         height: 30
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 975057ba34483abf0800000000000000
-      internalID: -314262122811554439
+      spriteID: 9588ed7c9132dd160800000000000000
+      internalID: 7051831185166469209
       vertices: []
       indices: 
       edges: []
@@ -221,20 +248,20 @@ TextureImporter:
         width: 39
         height: 38
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fdbf5e0d7da96f2a0800000000000000
-      internalID: -6704000743581025313
+      spriteID: 0ade87b6c15ff49c0800000000000000
+      internalID: -3940661646514917984
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: food_4
+      name: steam_1
       rect:
         serializedVersion: 2
         x: 168
@@ -242,20 +269,20 @@ TextureImporter:
         width: 6
         height: 11
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 386f310b036928430800000000000000
-      internalID: 3783751772801332867
+      spriteID: bdb3c9e834871b5e0800000000000000
+      internalID: -1895601736595522597
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: food_5
+      name: steam_2
       rect:
         serializedVersion: 2
         x: 176
@@ -263,20 +290,20 @@ TextureImporter:
         width: 5
         height: 7
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8215502b4f7544430800000000000000
-      internalID: 3766231896858906920
+      spriteID: 8d9b14176c184e040800000000000000
+      internalID: 4676005002421058008
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: food_6
+      name: steam_3
       rect:
         serializedVersion: 2
         x: 183
@@ -284,20 +311,20 @@ TextureImporter:
         width: 8
         height: 10
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c2bed87c14273f620800000000000000
-      internalID: 2806712619628358444
+      spriteID: 40bf58a5e4692f220800000000000000
+      internalID: 2518240404923874052
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: g_grapes
+      name: grapes
       rect:
         serializedVersion: 2
         x: 206
@@ -305,14 +332,14 @@ TextureImporter:
         width: 35
         height: 39
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cdc8c7f0c4aa83750800000000000000
-      internalID: 6284960523649584348
+      spriteID: def09995b732e4b50800000000000000
+      internalID: 6579235118326026221
       vertices: []
       indices: 
       edges: []
@@ -326,14 +353,14 @@ TextureImporter:
         width: 35
         height: 24
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e3512b6970174ce70800000000000000
-      internalID: 9134550221621171518
+      spriteID: 6849682708eb64b40800000000000000
+      internalID: 5424232260100854918
       vertices: []
       indices: 
       edges: []
