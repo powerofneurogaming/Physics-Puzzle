@@ -1242,6 +1242,11 @@ PrefabInstance:
       propertyPath: reloadProjectileButton
       value: 
       objectReference: {fileID: 320344827}
+    - target: {fileID: 4953624018127567296, guid: f0f43e8eb242dd14ba04b74725a7c601,
+        type: 3}
+      propertyPath: _launchPower
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1206768646631782231, guid: f0f43e8eb242dd14ba04b74725a7c601, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f0f43e8eb242dd14ba04b74725a7c601, type: 3}
