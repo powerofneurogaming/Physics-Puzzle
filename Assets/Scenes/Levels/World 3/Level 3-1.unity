@@ -149,7 +149,7 @@ PrefabInstance:
     - target: {fileID: 4100004062562467488, guid: a62f93e650f25894ba8f0151e9849282,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.82
+      value: -19.5
       objectReference: {fileID: 0}
     - target: {fileID: 4100004062562467488, guid: a62f93e650f25894ba8f0151e9849282,
         type: 3}
@@ -205,6 +205,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player (stand-in)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5031377225583856868, guid: a62f93e650f25894ba8f0151e9849282,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 16.14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a62f93e650f25894ba8f0151e9849282, type: 3}
@@ -1160,12 +1165,12 @@ PrefabInstance:
     - target: {fileID: 1206768646631782229, guid: f0f43e8eb242dd14ba04b74725a7c601,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.24
+      value: -15.52
       objectReference: {fileID: 0}
     - target: {fileID: 1206768646631782229, guid: f0f43e8eb242dd14ba04b74725a7c601,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.32
+      value: -2.86
       objectReference: {fileID: 0}
     - target: {fileID: 1206768646631782229, guid: f0f43e8eb242dd14ba04b74725a7c601,
         type: 3}
@@ -1699,6 +1704,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wind Effect
       objectReference: {fileID: 0}
+    - target: {fileID: 4787578375864822722, guid: 6ae5c2cdc2b9c91469a5a6b3366b9e66,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4787578375864822727, guid: 6ae5c2cdc2b9c91469a5a6b3366b9e66,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1771,7 +1781,7 @@ PrefabInstance:
     - target: {fileID: 5569188380267323762, guid: 18f6d070a1f96a845883efd063ec55f3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.3103056
+      value: -7.81
       objectReference: {fileID: 0}
     - target: {fileID: 5569188380267323762, guid: 18f6d070a1f96a845883efd063ec55f3,
         type: 3}
@@ -1832,6 +1842,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 324288217927633093, guid: e1619a516003be04ba1e4e4902112914,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6037080265845058920, guid: e1619a516003be04ba1e4e4902112914,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1892,6 +1907,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Backgrounds
       objectReference: {fileID: 0}
+    - target: {fileID: 6037080266778850494, guid: e1619a516003be04ba1e4e4902112914,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1619a516003be04ba1e4e4902112914, type: 3}
 --- !u!1001 &7913596251131141752
@@ -1905,6 +1925,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Grill (kinematic)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2349478844023960101, guid: 2a278cec30ddd5143af1ce5d68da7649,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2349478844023960105, guid: 2a278cec30ddd5143af1ce5d68da7649,
         type: 3}
@@ -1978,12 +2003,12 @@ PrefabInstance:
     - target: {fileID: 3280401746512850377, guid: 383ed69ab10af5044b3f758738e32c82,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 3280401746512850377, guid: 383ed69ab10af5044b3f758738e32c82,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5
+      value: -2.24
       objectReference: {fileID: 0}
     - target: {fileID: 3280401746512850377, guid: 383ed69ab10af5044b3f758738e32c82,
         type: 3}
@@ -2109,6 +2134,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Seagull
+      objectReference: {fileID: 0}
+    - target: {fileID: 8508759423424721837, guid: de37c026fcb11944bbbfa459c1e08b8c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de37c026fcb11944bbbfa459c1e08b8c, type: 3}
