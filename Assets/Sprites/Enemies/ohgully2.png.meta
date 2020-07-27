@@ -1,61 +1,31 @@
 fileFormatVersion: 2
-guid: 530c404217b1b57468b350da029525ff
+guid: 635a9d0c30f2b7e4d859323eb0afcd56
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1045181238759104467
-    second: apple
+      213: 7527881045987573908
+    second: ohgully2_0
   - first:
-      213: 3046544090647025007
-    second: cheese
+      213: 3182932818432875029
+    second: ohgully2_1
   - first:
-      213: -314262122811554439
-    second: lemon
+      213: -9212272400517342122
+    second: ohgully2_2
   - first:
-      213: -6704000743581025313
-    second: carrot
+      213: 1397067529159495233
+    second: ohgully2_3
   - first:
-      213: 3783751772801332867
-    second: steam_1
+      213: 8077598271366299767
+    second: ohgully2_4
   - first:
-      213: 3766231896858906920
-    second: steam_2
+      213: 4050802108475853495
+    second: ohgully2_5
   - first:
-      213: 2806712619628358444
-    second: steam_3
+      213: -911911390625731713
+    second: ohgully2_6
   - first:
-      213: 6284960523649584348
-    second: g_grapes
-  - first:
-      213: 9134550221621171518
-    second: steak
-  - first:
-      213: -937519870473542992
-    second: apple
-  - first:
-      213: -2611463999402340258
-    second: cheese
-  - first:
-      213: 7051831185166469209
-    second: lemon
-  - first:
-      213: -3940661646514917984
-    second: carrot
-  - first:
-      213: -1895601736595522597
-    second: steam_1
-  - first:
-      213: 4676005002421058008
-    second: steam_2
-  - first:
-      213: 2518240404923874052
-    second: steam_3
-  - first:
-      213: 6579235118326026221
-    second: grapes
-  - first:
-      213: 5424232260100854918
-    second: steak
+      213: 5742061453325530647
+    second: ohgully2_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -177,190 +147,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: apple
+      name: ohgully2_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 11
-        width: 27
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0b2ed8e15a24df2f0800000000000000
-      internalID: -937519870473542992
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cheese
-      rect:
-        serializedVersion: 2
-        x: 38
-        y: 8
-        width: 35
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e5017e3245732cbd0800000000000000
-      internalID: -2611463999402340258
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: lemon
-      rect:
-        serializedVersion: 2
-        x: 81
-        y: 7
-        width: 35
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9588ed7c9132dd160800000000000000
-      internalID: 7051831185166469209
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: carrot
-      rect:
-        serializedVersion: 2
-        x: 119
-        y: 2
-        width: 39
-        height: 38
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0ade87b6c15ff49c0800000000000000
-      internalID: -3940661646514917984
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: steam_1
-      rect:
-        serializedVersion: 2
-        x: 168
-        y: 31
-        width: 6
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bdb3c9e834871b5e0800000000000000
-      internalID: -1895601736595522597
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: steam_2
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 33
-        width: 5
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8d9b14176c184e040800000000000000
-      internalID: 4676005002421058008
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: steam_3
-      rect:
-        serializedVersion: 2
-        x: 183
-        y: 32
-        width: 8
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 40bf58a5e4692f220800000000000000
-      internalID: 2518240404923874052
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: grapes
-      rect:
-        serializedVersion: 2
-        x: 206
         y: 0
-        width: 35
-        height: 39
+        width: 140
+        height: 85
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: def09995b732e4b50800000000000000
-      internalID: 6579235118326026221
+      spriteID: 4904c794de7687860800000000000000
+      internalID: 7527881045987573908
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: steak
+      name: ohgully2_1
       rect:
         serializedVersion: 2
-        x: 161
-        y: 7
-        width: 35
-        height: 24
+        x: 141
+        y: 13
+        width: 140
+        height: 71
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6849682708eb64b40800000000000000
-      internalID: 5424232260100854918
+      spriteID: 51adf92d88c0c2c20800000000000000
+      internalID: 3182932818432875029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ohgully2_2
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 13
+        width: 141
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65c57097f0f672080800000000000000
+      internalID: -9212272400517342122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ohgully2_3
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 12
+        width: 139
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14ec8ca0481636310800000000000000
+      internalID: 1397067529159495233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ohgully2_4
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 11
+        width: 141
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7700913b4d4691070800000000000000
+      internalID: 8077598271366299767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ohgully2_5
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 12
+        width: 140
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ba4b1b3e07573830800000000000000
+      internalID: 4050802108475853495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ohgully2_6
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 13
+        width: 140
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7bee17fb6d3853f0800000000000000
+      internalID: -911911390625731713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ohgully2_7
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 14
+        width: 140
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7167ee31876efaf40800000000000000
+      internalID: 5742061453325530647
       vertices: []
       indices: 
       edges: []

@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1206768646631782229}
   - component: {fileID: 1206768646631782228}
-  - component: {fileID: 1206768646631782231}
   - component: {fileID: 1206768646631782226}
   - component: {fileID: 1206768646631782227}
   - component: {fileID: 1206768646631782225}
@@ -86,25 +85,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &1206768646631782231
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1206768646631782230}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 19aa1a1f8e690214f9afa39faf7d6f51, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!50 &1206768646631782226
 Rigidbody2D:
   serializedVersion: 4
@@ -268,6 +248,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70c5c23ecca65ed4c920e83972a8d4ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _projectilesLeft: 5
+  player: {fileID: 0}
+  lc: {fileID: 0}
+  reloadProjectileButton: {fileID: 0}
   _launchPower: 500
+  _projectileElevation: 5
   _objectName: Projectile
