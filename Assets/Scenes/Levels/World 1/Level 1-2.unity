@@ -650,6 +650,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: crate (moveable) (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 611876107197532278, guid: 85e535cc24d3d0043b807b5b506b1266,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85e535cc24d3d0043b807b5b506b1266, type: 3}
 --- !u!20 &1217217016 stripped
@@ -974,7 +979,7 @@ Transform:
   - {fileID: 1295944920}
   - {fileID: 1550614904}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1971380509
 PrefabInstance:
@@ -1407,6 +1412,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: crate (unmoveable)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2260840097485800355, guid: 94c4db70472d66745b3069b51a419883,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94c4db70472d66745b3069b51a419883, type: 3}
