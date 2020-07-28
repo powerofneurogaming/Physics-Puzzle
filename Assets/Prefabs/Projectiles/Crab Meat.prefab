@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1206768646631782229}
+  - component: {fileID: 4953624018127567296}
   - component: {fileID: 1206768646631782228}
   - component: {fileID: 1206768646631782226}
   - component: {fileID: 1206768646631782227}
   - component: {fileID: 1206768646631782225}
-  - component: {fileID: 4953624018127567296}
   m_Layer: 0
   m_Name: Crab Meat
   m_TagString: Untagged
@@ -35,6 +35,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4953624018127567296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206768646631782230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70c5c23ecca65ed4c920e83972a8d4ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  lc: {fileID: 0}
+  reloadProjectileButton: {fileID: 0}
+  _launchPower: 500
+  _projectileElevation: 5
+  _objectName: Projectile
 --- !u!212 &1206768646631782228
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -236,21 +254,3 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 1
---- !u!114 &4953624018127567296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1206768646631782230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70c5c23ecca65ed4c920e83972a8d4ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  lc: {fileID: 0}
-  reloadProjectileButton: {fileID: 0}
-  _launchPower: 500
-  _projectileElevation: 5
-  _objectName: Projectile

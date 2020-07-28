@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 4584477872512186366, guid: 86dbb847b8c3c214893ebf3a7ac985c8,
         type: 3}
       propertyPath: m_Name
-      value: Fall Zone
+      value: Fall Zone (floor)
       objectReference: {fileID: 0}
     - target: {fileID: 8419761344566137821, guid: 86dbb847b8c3c214893ebf3a7ac985c8,
         type: 3}
@@ -66,11 +66,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8419761344566137821, guid: 86dbb847b8c3c214893ebf3a7ac985c8,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8419761344566137821, guid: 86dbb847b8c3c214893ebf3a7ac985c8,
         type: 3}
