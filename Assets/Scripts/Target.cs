@@ -7,11 +7,15 @@ public class Target : MonoBehaviour
 {
 	//Variables
 	// Public
-	public LevelController lc;
+	public LevelController levelController;
 	//Private
 	[SerializeField] private GameObject _cloudParticlePrefab = null;
 
-	private void OnCollisionEnter2D(Collision2D collision)
+    private void Start()
+    {
+		levelController.IncrementTargets();
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
 	{
 		Debug.Log("Collision started!");
 		Projectile projectile = collision.collider.GetComponent<Projectile>();
@@ -57,6 +61,6 @@ public class Target : MonoBehaviour
         MakePuffOfClouds();
 		// TODO: either deactivate or move target - for infinite play mode.
 		Destroy(gameObject);
-		lc.DecrementTargets();
+		levelController.DecrementTargets();
 	}
 }

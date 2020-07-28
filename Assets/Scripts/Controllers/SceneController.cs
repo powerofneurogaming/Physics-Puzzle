@@ -11,8 +11,8 @@ public class SceneController : MonoBehaviour
 {
     private SceneParsing _sp = new SceneParsing();
     private SceneLoading _sl = new SceneLoading();
-    private static int World = 0; // {get; set; }  //= 0; // 
-    private static int Level = 0; // { get; set; 
+    private static int World = -1; // {get; set; }  //= 0; // 
+    private static int Level = -1; // { get; set; 
     private static string _currentScene = "Main Menu";  // assuming start from Main Menu
     private static string _previousScene = "Main Menu";
     // Since the Options menu can be from anywhere, we have to memorize the scene that was brought from there
@@ -53,6 +53,7 @@ public class SceneController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("Scene Controller has started!");
         // Set the world values upon starting - i.e. every time a scene is loaded
         // _sp = new SceneParsing();
 

@@ -30,9 +30,54 @@ EditorBuildSettings:
     path: Assets/Scenes/Level Selection Screens/World 1/World 1-1.unity
     guid: 06dbbe56aac630943836a6b7605d58fa
   - enabled: 1
+    path: Assets/Scenes/Level Selection Screens/World 2/World 2-1.unity
+    guid: d21b0f5f0e4c8cd4888216b5fb695582
+  - enabled: 1
+    path: Assets/Scenes/Level Selection Screens/World 3/World 3-1.unity
+    guid: c44bb8558166fc44dab4f1833fe86c8c
+  - enabled: 1
     path: Assets/Scenes/Levels/World 1/Level 1-1.unity
     guid: 672f3ac5e4056ad4483c047a767c061a
   - enabled: 1
     path: Assets/Scenes/Levels/World 1/Level 1-2.unity
     guid: f4334399445ac2c4cadc524d5ff684d5
+  - enabled: 1
+    path: Assets/Scenes/Levels/World 1/Level 1-3.unity
+    guid: 0484318350ce6d54e9acd48b7f362405
+  - enabled: 1
+    path: Assets/Scenes/Levels/World 1/Level 1-4.unity
+    guid: 581b79ed3fd891d4da24002c4d375ab4
+  - enabled: 1
+    path: Assets/Scenes/Levels/World 1/Level 1-5.unity
+    guid: 3262c5e2e4a82f8419ec0bdf29f609f3
+  - enabled: 1
+    path: Assets/Scenes/Levels/World 2 (beach)/Level 2-1.unity
+    guid: 2c1ebf505bf625849823691785c33805
+  - enabled: 1
+    path: Assets/Scenes/Levels/World 2 (beach)/Level 2-3.unity
+    guid: c6f232d41fd594dd4bd634b2d105907e
+  - enabled: 1
+    path: Assets/Scenes/Levels/World 2 (beach)/Level 2-4.unity
+    guid: bb50a81bdb3a144fe8b321b882f0a166
+  - enabled: 1
+    path: Assets/Scenes/Levels/World 2 (beach)/Level 2-5.unity
+    guid: faa1790cb4c5945c187a5c87207513a3
+  - enabled: 1
+    path: Assets/Scenes/Levels/World 2 (beach)/Level 2-6.unity
+    guid: 91a3ab3db75d84db983a40437c0f1433
+  - enabled: 1
+    path: Assets/Scenes/Levels/World 3/Level 3-1.unity
+    guid: df012904ac06ff64fa0d26cddd6e2675
+  - enabled: 1
+    path: Assets/Scenes/Levels/World 3/Level 3-2.unity
+    guid: 043ba4bc7ed99ec49951da6755ebe682
+  - enabled: 1
+    path: Assets/Scenes/Levels/World 3/Level 3-3.unity
+    guid: 7da661f9827935740a5da47eb2219a4f
+  - enabled: 1
+    path: Assets/Scenes/Levels/World 3/Level 3-4.unity
+    guid: 23b599aabb85a324ab7ee2981cb6dd6e
+  - enabled: 1
+    path: Assets/Scenes/Levels/World 3/Level 3-5.unity
+    guid: 0df4cb7e113b61e42b14fe6439ccbf2d
   m_configObjects: {}

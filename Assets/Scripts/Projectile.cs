@@ -9,14 +9,15 @@ public class Projectile : MonoBehaviour
     // Public:
     // External objects to modify
     public Player player;
-	public LevelController lc;
+	public LevelController levelController;
 	public UnityEngine.UI.Button reloadProjectileButton;
-   // public UnityEngine.UI.Button winButton;
+	// public UnityEngine.UI.Button winButton;
 	// Local:
 	// Currently not modified after Start function
 	// SerializeField enables variable to be adjusted in object inspector (under script variables.
 	// The variable name also displays with first letter capped, and spacing beween the first cap and previous letter.
 	// [SerializeField] private int _projectilesLeft = 5;
+	[SerializeField] private float _launchRadius = 10;
 	[SerializeField] private float _launchPower = 500;
 	[SerializeField] private float _projectileElevation = 5;
 	// TODO: Remove _objectName and just use tags instead.
@@ -38,7 +39,7 @@ public class Projectile : MonoBehaviour
      */
 	public void ResetProjectile()
 	{
-		int projectilesLeft = lc.DecrementProjectiles();
+		int projectilesLeft = levelController.DecrementProjectiles();
 		Debug.Log($"There are {projectilesLeft} projectiles left");
 		if (projectilesLeft <= 0)
 		{
@@ -165,8 +166,23 @@ public class Projectile : MonoBehaviour
 			// Move the object when click and dragged.
 			// ScreenToWorld converts the position, returning a Vector3 (x, y, z)
 			_objectDragged = true;
-			Vector3 newPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			transform.position = new Vector3(newPosition.x, newPosition.y, 1);
+			// TODO: Make projectile have no effect on the player
+			//player.gameObject.GetComponent<Rigidbody2D>().collisionDetectionMode
+            Vector3 newPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			// check if the position is within our radious of movement
+			// Code based off of :
+			// https://answers.unity.com/questions/1309521/how-to-keep-an-object-within-a-circlesphere-radius.html
+			float dist = Vector3.Distance(newPosition, _launchingPoint);
+			if( dist > _launchRadius)
+            {
+				Vector3 fromOriginToObject = newPosition - _launchingPoint;
+				fromOriginToObject *= _launchRadius / dist;
+				newPosition = _launchingPoint + fromOriginToObject;
+				transform.position = newPosition;
+
+			}
+			else
+				transform.position = new Vector3(newPosition.x, newPosition.y, 1);
 		}    
 	}
 
