@@ -404,18 +404,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85e535cc24d3d0043b807b5b506b1266, type: 3}
---- !u!114 &265261995 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4953624018127567296, guid: f0f43e8eb242dd14ba04b74725a7c601,
-    type: 3}
-  m_PrefabInstance: {fileID: 1206768647057082894}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70c5c23ecca65ed4c920e83972a8d4ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &288517237
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,6 +468,11 @@ PrefabInstance:
     - target: {fileID: 3253652935167293875, guid: 383ed69ab10af5044b3f758738e32c82,
         type: 3}
       propertyPath: lc
+      value: 
+      objectReference: {fileID: 1655944080}
+    - target: {fileID: 3253652935167293875, guid: 383ed69ab10af5044b3f758738e32c82,
+        type: 3}
+      propertyPath: levelController
       value: 
       objectReference: {fileID: 1655944080}
     - target: {fileID: 3280401746512850377, guid: 383ed69ab10af5044b3f758738e32c82,
@@ -810,7 +803,7 @@ PrefabInstance:
     - target: {fileID: 98813602826469009, guid: e5b73bdabae766b46890d77082431152,
         type: 3}
       propertyPath: m_Name
-      value: LevelController
+      value: Level Controller
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5b73bdabae766b46890d77082431152, type: 3}
@@ -1050,6 +1043,11 @@ PrefabInstance:
       propertyPath: lc
       value: 
       objectReference: {fileID: 1655944080}
+    - target: {fileID: 3253652935167293875, guid: 383ed69ab10af5044b3f758738e32c82,
+        type: 3}
+      propertyPath: levelController
+      value: 
+      objectReference: {fileID: 1655944080}
     - target: {fileID: 3280401746512850377, guid: 383ed69ab10af5044b3f758738e32c82,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1165,6 +1163,11 @@ PrefabInstance:
       propertyPath: lc
       value: 
       objectReference: {fileID: 1655944080}
+    - target: {fileID: 3253652935167293875, guid: 383ed69ab10af5044b3f758738e32c82,
+        type: 3}
+      propertyPath: levelController
+      value: 
+      objectReference: {fileID: 1655944080}
     - target: {fileID: 3280401746512850377, guid: 383ed69ab10af5044b3f758738e32c82,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1252,6 +1255,11 @@ PrefabInstance:
     - target: {fileID: 3253652935167293875, guid: 383ed69ab10af5044b3f758738e32c82,
         type: 3}
       propertyPath: lc
+      value: 
+      objectReference: {fileID: 1655944080}
+    - target: {fileID: 3253652935167293875, guid: 383ed69ab10af5044b3f758738e32c82,
+        type: 3}
+      propertyPath: levelController
       value: 
       objectReference: {fileID: 1655944080}
     - target: {fileID: 3280401746512850377, guid: 383ed69ab10af5044b3f758738e32c82,
@@ -1690,17 +1698,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4953624018127567296, guid: f0f43e8eb242dd14ba04b74725a7c601,
         type: 3}
-      propertyPath: projectile
-      value: 
-      objectReference: {fileID: 265261995}
-    - target: {fileID: 4953624018127567296, guid: f0f43e8eb242dd14ba04b74725a7c601,
-        type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 223119047}
     - target: {fileID: 4953624018127567296, guid: f0f43e8eb242dd14ba04b74725a7c601,
         type: 3}
-      propertyPath: lc
+      propertyPath: levelController
       value: 
       objectReference: {fileID: 1655944080}
     - target: {fileID: 4953624018127567296, guid: f0f43e8eb242dd14ba04b74725a7c601,
@@ -1708,13 +1711,7 @@ PrefabInstance:
       propertyPath: reloadProjectileButton
       value: 
       objectReference: {fileID: 320344827}
-    - target: {fileID: 4953624018127567296, guid: f0f43e8eb242dd14ba04b74725a7c601,
-        type: 3}
-      propertyPath: _launchPower
-      value: 200
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1206768646631782231, guid: f0f43e8eb242dd14ba04b74725a7c601, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0f43e8eb242dd14ba04b74725a7c601, type: 3}
 --- !u!1001 &1665711758723322687
 PrefabInstance:
@@ -2507,6 +2504,11 @@ PrefabInstance:
     - target: {fileID: 3253652935167293875, guid: 383ed69ab10af5044b3f758738e32c82,
         type: 3}
       propertyPath: lc
+      value: 
+      objectReference: {fileID: 1655944080}
+    - target: {fileID: 3253652935167293875, guid: 383ed69ab10af5044b3f758738e32c82,
+        type: 3}
+      propertyPath: levelController
       value: 
       objectReference: {fileID: 1655944080}
     - target: {fileID: 3280401746512850377, guid: 383ed69ab10af5044b3f758738e32c82,

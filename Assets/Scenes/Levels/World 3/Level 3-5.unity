@@ -482,6 +482,11 @@ PrefabInstance:
       propertyPath: lc
       value: 
       objectReference: {fileID: 1655944080}
+    - target: {fileID: 3253652935167293875, guid: 383ed69ab10af5044b3f758738e32c82,
+        type: 3}
+      propertyPath: levelController
+      value: 
+      objectReference: {fileID: 1655944080}
     - target: {fileID: 3280401746512850377, guid: 383ed69ab10af5044b3f758738e32c82,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1050,6 +1055,11 @@ PrefabInstance:
       propertyPath: lc
       value: 
       objectReference: {fileID: 1655944080}
+    - target: {fileID: 3253652935167293875, guid: 383ed69ab10af5044b3f758738e32c82,
+        type: 3}
+      propertyPath: levelController
+      value: 
+      objectReference: {fileID: 1655944080}
     - target: {fileID: 3280401746512850377, guid: 383ed69ab10af5044b3f758738e32c82,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1165,6 +1175,11 @@ PrefabInstance:
       propertyPath: lc
       value: 
       objectReference: {fileID: 1655944080}
+    - target: {fileID: 3253652935167293875, guid: 383ed69ab10af5044b3f758738e32c82,
+        type: 3}
+      propertyPath: levelController
+      value: 
+      objectReference: {fileID: 1655944080}
     - target: {fileID: 3280401746512850377, guid: 383ed69ab10af5044b3f758738e32c82,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1252,6 +1267,11 @@ PrefabInstance:
     - target: {fileID: 3253652935167293875, guid: 383ed69ab10af5044b3f758738e32c82,
         type: 3}
       propertyPath: lc
+      value: 
+      objectReference: {fileID: 1655944080}
+    - target: {fileID: 3253652935167293875, guid: 383ed69ab10af5044b3f758738e32c82,
+        type: 3}
+      propertyPath: levelController
       value: 
       objectReference: {fileID: 1655944080}
     - target: {fileID: 3280401746512850377, guid: 383ed69ab10af5044b3f758738e32c82,
@@ -1711,8 +1731,13 @@ PrefabInstance:
     - target: {fileID: 4953624018127567296, guid: f0f43e8eb242dd14ba04b74725a7c601,
         type: 3}
       propertyPath: _launchPower
-      value: 200
+      value: 500
       objectReference: {fileID: 0}
+    - target: {fileID: 4953624018127567296, guid: f0f43e8eb242dd14ba04b74725a7c601,
+        type: 3}
+      propertyPath: levelController
+      value: 
+      objectReference: {fileID: 1655944080}
     m_RemovedComponents:
     - {fileID: 1206768646631782231, guid: f0f43e8eb242dd14ba04b74725a7c601, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f0f43e8eb242dd14ba04b74725a7c601, type: 3}
@@ -2507,6 +2532,11 @@ PrefabInstance:
     - target: {fileID: 3253652935167293875, guid: 383ed69ab10af5044b3f758738e32c82,
         type: 3}
       propertyPath: lc
+      value: 
+      objectReference: {fileID: 1655944080}
+    - target: {fileID: 3253652935167293875, guid: 383ed69ab10af5044b3f758738e32c82,
+        type: 3}
+      propertyPath: levelController
       value: 
       objectReference: {fileID: 1655944080}
     - target: {fileID: 3280401746512850377, guid: 383ed69ab10af5044b3f758738e32c82,

@@ -10,3 +10,6 @@ Spinning Coin 8-bit from:
 https://opengameart.org/content/spinning-coin-8-bit-sprite
 Blue monster sprite from:
 https://opengameart.org/content/blue-land-monster-sprites
+
+"Pointing hand" sprite (originally labeled "3") from author Amir027 at:
+https://opengameart.org/content/cursor
