@@ -275,6 +275,52 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1225231489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3442245651892690740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc180a656d880ce40a8a0213e4529417, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneController: {fileID: 0}
+--- !u!114 &1225231491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3442245651892690740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Level Select (World 1)
 --- !u!1 &3442245652430426872
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,7 +659,7 @@ GameObject:
   - component: {fileID: 3442245652679185839}
   - component: {fileID: 2082983972}
   m_Layer: 5
-  m_Name: Canvas (Level)
+  m_Name: Level (Canvas)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1805,7 +1851,7 @@ PrefabInstance:
     - target: {fileID: 3679532137226495302, guid: e1fd3c0eed9dab442871231c802bee42,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 76
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 3679532137226495302, guid: e1fd3c0eed9dab442871231c802bee42,
         type: 3}
@@ -2264,6 +2310,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3442245652679185834}
     m_Modifications:
+    - target: {fileID: 5019411441559706249, guid: 5a6751b8ea42a73419346105f48be6b4,
+        type: 3}
+      propertyPath: m_Name
+      value: Current World
+      objectReference: {fileID: 0}
     - target: {fileID: 5019411442454206737, guid: 5a6751b8ea42a73419346105f48be6b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2374,8 +2425,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Current World
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5019411441559706255, guid: 5a6751b8ea42a73419346105f48be6b4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5a6751b8ea42a73419346105f48be6b4, type: 3}
+--- !u!1 &3442245651892690740 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5019411441559706249, guid: 5a6751b8ea42a73419346105f48be6b4,
+    type: 3}
+  m_PrefabInstance: {fileID: 7669023449959941565}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &3442245652518755500 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5019411442454206737, guid: 5a6751b8ea42a73419346105f48be6b4,

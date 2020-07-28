@@ -7,7 +7,7 @@ public class Target : MonoBehaviour
 {
 	//Variables
 	// Public
-	public LevelController lc;
+	public LevelController levelController;
 	//Private
 	[SerializeField] private GameObject _cloudParticlePrefab = null;
 
@@ -57,6 +57,6 @@ public class Target : MonoBehaviour
         MakePuffOfClouds();
 		// TODO: either deactivate or move target - for infinite play mode.
 		Destroy(gameObject);
-		lc.DecrementTargets();
+		levelController.DecrementTargets();
 	}
 }
