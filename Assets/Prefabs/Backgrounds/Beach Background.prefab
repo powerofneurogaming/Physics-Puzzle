@@ -12,14 +12,13 @@ GameObject:
   - component: {fileID: 3402433647641955241}
   - component: {fileID: 3402433647641955247}
   - component: {fileID: 3402433647641955246}
-  - component: {fileID: 6325029891815096736}
   m_Layer: 0
   m_Name: Beach Background
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3402433647641955240
 Transform:
   m_ObjectHideFlags: 0
@@ -98,7 +97,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -2.4}
+  m_Offset: {x: 0, y: -4}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -109,7 +108,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 16.316784, y: 0.7}
+  m_Size: {x: 19, y: 0.7}
   m_EdgeRadius: 0
 --- !u!120 &3402433647641955246
 LineRenderer:
@@ -208,32 +207,6 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!61 &6325029891815096736
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3402433647641955242}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -1, y: 3.1}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 18, y: 8.75}
-    newSize: {x: 30.719997, y: 15.359999}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 16.316784, y: 0.7}
-  m_EdgeRadius: 0
 --- !u!1001 &9066673278001822533
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -249,7 +222,7 @@ PrefabInstance:
     - target: {fileID: 2268990041216857244, guid: 5ef42e89408ff3e41a52807589e22ad5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.4
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 2268990041216857244, guid: 5ef42e89408ff3e41a52807589e22ad5,
         type: 3}
