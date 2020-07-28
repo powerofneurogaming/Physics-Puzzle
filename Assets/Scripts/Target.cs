@@ -11,7 +11,11 @@ public class Target : MonoBehaviour
 	//Private
 	[SerializeField] private GameObject _cloudParticlePrefab = null;
 
-	private void OnCollisionEnter2D(Collision2D collision)
+    private void Start()
+    {
+		levelController.IncrementTargets();
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
 	{
 		Debug.Log("Collision started!");
 		Projectile projectile = collision.collider.GetComponent<Projectile>();

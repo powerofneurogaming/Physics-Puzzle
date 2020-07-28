@@ -36,10 +36,10 @@ public class LevelController : MonoBehaviour
     // Counters for the playable levels, with default values
     // TODO: Assign number  of projectiles relative to the number of targets, and difficulty setting
     // _targetsLeft changes based on the actual number of targets in the scene during Start()
-    private int _projectilesStart = 9;
-    private int _projectilesLeft = 9;
-    private int _targetsLeft = 3;
-    private int _targetsStart = 3;
+    private int _projectilesStart = 0; //9;
+    private int _projectilesLeft = 0; //9;
+    private int _targetsLeft = 0; //3;
+    private int _targetsStart = 0; //3;
     private int _targetsHit = 0;
 
     // Used to target score
@@ -50,6 +50,23 @@ public class LevelController : MonoBehaviour
     public int GetTargetsCount() { return _targetsLeft; }
     public int GetProjectilesCount() { return _projectilesLeft; }
 
+
+    /*
+     * Function used for newly-spawned targets
+     */
+    public int IncrementTargets()
+    {
+        //
+        _targetsLeft++;
+        _targetsStart++;
+        _projectilesLeft += _projectilesPerTargets;
+        _projectilesStart += _projectilesPerTargets;
+
+        SetCustomerCountText();
+        SetFoodCountText();
+
+        return _targetsLeft;
+    }
 
     /*
      * Returns the number of targets left, after the reduction
@@ -123,10 +140,12 @@ public class LevelController : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        _targets = FindObjectsOfType<Target>();
-        _targetsLeft = _targetsStart = _targets.Count();
         _projectilesPerTargets = Math.Max(1, 6 - difficulty);
+        /*
+        _targets = FindObjectsOfType<Target>();
+        _targetsLeft = _targetsStart = _targets.Count();        
         _projectilesLeft = _projectilesStart = _targetsLeft * _projectilesPerTargets;
+        */
 
         SetCountTexts();
 
