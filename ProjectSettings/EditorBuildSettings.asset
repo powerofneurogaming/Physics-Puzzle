@@ -54,7 +54,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/World 2 (beach)/Level 2-1.unity
     guid: 2c1ebf505bf625849823691785c33805
   - enabled: 1
-    path: Assets/Scenes/Levels/World 2 (beach)/Level 2-3.unity
+    path: Assets/Scenes/Levels/World 2 (beach)/Level 2-2.unity
     guid: c6f232d41fd594dd4bd634b2d105907e
   - enabled: 1
     path: Assets/Scenes/Levels/World 2 (beach)/Level 2-4.unity

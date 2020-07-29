@@ -54,6 +54,7 @@ public class SceneController : MonoBehaviour
     void Start()
     {
         Debug.Log("Scene Controller has started!");
+        Debug.LogFormat("Object name of {0}", name);
         // Set the world values upon starting - i.e. every time a scene is loaded
         // _sp = new SceneParsing();
 
