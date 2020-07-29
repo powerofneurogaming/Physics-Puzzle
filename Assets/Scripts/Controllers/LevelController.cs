@@ -59,6 +59,8 @@ public class LevelController : MonoBehaviour
         //
         _targetsLeft++;
         _targetsStart++;
+        // To prevent a race condition with the starts, I made the projectile assignment calculate here.
+        _projectilesPerTargets = Math.Max(1, 6 - difficulty); 
         _projectilesLeft += _projectilesPerTargets;
         _projectilesStart += _projectilesPerTargets;
 
@@ -140,7 +142,7 @@ public class LevelController : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        _projectilesPerTargets = Math.Max(1, 6 - difficulty);
+        // _projectilesPerTargets = Math.Max(1, 6 - difficulty);
         /*
         _targets = FindObjectsOfType<Target>();
         _targetsLeft = _targetsStart = _targets.Count();        
@@ -154,7 +156,8 @@ public class LevelController : MonoBehaviour
         switch (resultButton)
         {
             case null:
-                Debug.Log("Could not find the Result button!");
+                Debug.LogError("Could not find the Result button!");
+                // Debug.Log("Could not find the Result button!");
                 break;
             default:
                 Debug.Log("Found the Result button!");

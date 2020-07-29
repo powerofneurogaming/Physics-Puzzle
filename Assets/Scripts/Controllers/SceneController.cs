@@ -68,14 +68,18 @@ public class SceneController : MonoBehaviour
             _currentScene = nextScene;
         }
         // check based on the most common levels
+        Debug.LogFormat("Getting world and level on scene {0}", nextScene);
         if (_sp.FindIfHasWorldLevel(_currentScene)) // _sp.FindLevelWord(_currentScene))
         {
             (World, Level) = _sp.FindWorldLevelFromScene(_currentScene);
+            Debug.Log($"Got World {World} and Level {Level}");
             // World = _sp.FindLevelFromScene(_currentScene);
             // Level=_sp.FindWorldFromScene(_currentScene);
         }
         else
         {
+            Debug.LogFormat("Couldn't get info on scene {0}\n" +
+                "Setting world and level to 0", nextScene);
             World = 0;
             Level = 0;
         }

@@ -43,10 +43,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4194f7b14d8496348b6c737b8e9f90df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectilesLeft: 0
-  targetsLeft: 0
-  targetsHit: 0
-  targetMultiplyer: 100
-  projectileMultiplyer: 100
-  timeMultiplyer: 100
+  resultsText: {fileID: 0}
+  projectilesLeftText: {fileID: 0}
+  targetsLeftText: {fileID: 0}
+  resultButton: {fileID: 0}
+  sceneController: {fileID: 0}
+  reloadButton: {fileID: 0}
+  difficulty: 3
+  targetMultiplier: 100
+  projectileMultiplier: 100
+  timeMultiplier: 100
   targetTime: 120
