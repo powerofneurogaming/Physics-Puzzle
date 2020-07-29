@@ -36,7 +36,7 @@ public class SceneController : MonoBehaviour
     //Almost the same as SceneLoading's LoadNextLevel, but it takes in the inputs
     public void GoToNextLevel()
     {
-        _sl.LoadNextLevel(worldNo: World, levelNo: Level);
+        _sl.LoadNextLevel2(worldNo: World, levelNo: Level);
     }
 
     public void GoToCurrentWorld()
