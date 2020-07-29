@@ -15,6 +15,7 @@ public class Target : MonoBehaviour
     private void Start()
     {
 		Debug.Log("Starting up a target!");
+		Debug.LogFormat("Object name of {0}", name);
 		// GameObject 
 		_lc = GameObject.Find("Level Controller").GetComponent<LevelController>();
 		//if (_lc == null)

@@ -10,12 +10,14 @@ public class LevelController : MonoBehaviour
 {
     // public variables
     // TODO: Since button cannot be targeted, have button target variables in this class
+    /*
     public Text resultsText; // Appears when level is lossed or won
     public Text projectilesLeftText, targetsLeftText; // Displayed in buttons
     public UnityEngine.UI.Button resultButton; // For making the button disappear, reappear, & change behavior
     // public ReloadButton reloadButton;
     public SceneController sceneController;
     public ReloadButton reloadButton;
+    */
 
     // Private
     // Static for the one instance ever within the game - only starts at given value once.
@@ -30,7 +32,14 @@ public class LevelController : MonoBehaviour
     [SerializeField] private int timeMultiplier = 100;
     [SerializeField] private int targetTime = 120;
 
+    private ObjectFinder _of = new ObjectFinder();
     // private ReloadButton _rb = new ReloadButton();
+    private Text resultsText; // Appears when level is lossed or won
+    private Text projectilesLeftText, targetsLeftText; // Displayed in buttons
+    private UnityEngine.UI.Button resultButton; // For making the button disappear, reappear, & change behavior
+    // private ReloadButton reloadButton;
+    private SceneController sceneController;
+    private ReloadButton reloadButton;
 
     private int _projectilesPerTargets = 3; // 6 - difficulty
     // Counters for the playable levels, with default values
@@ -63,6 +72,21 @@ public class LevelController : MonoBehaviour
         _projectilesPerTargets = Math.Max(1, 6 - difficulty); 
         _projectilesLeft += _projectilesPerTargets;
         _projectilesStart += _projectilesPerTargets;
+
+        //SetCustomerCountText();
+        // SetFoodCountText();
+
+        return _targetsLeft;
+    }
+
+    /*
+     * Used to increment the number of targets and update the button texts.
+     * Used after the Awake and Start behaviors as the text may not be initialized (race conditions)
+     */
+    public int IncrementTargetsLate()
+    {
+        //
+        IncrementTargets();
 
         SetCustomerCountText();
         SetFoodCountText();
@@ -142,11 +166,37 @@ public class LevelController : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        Debug.Log("Level Controller has started!");
+        Debug.LogFormat("Object name of {0}", name);
         // _projectilesPerTargets = Math.Max(1, 6 - difficulty);
         /*
         _targets = FindObjectsOfType<Target>();
         _targetsLeft = _targetsStart = _targets.Count();        
         _projectilesLeft = _projectilesStart = _targetsLeft * _projectilesPerTargets;
+        */
+        GameObject sceneObject; // = 
+        if(_of.FindObject("Scene Controller", out sceneObject))//GameObject.Find("Scene Controller");
+            sceneController = sceneObject.GetComponent<SceneController>();
+        // Get the canvas for all the button related stuff
+       //  GameObject canvasObject = GameObject.Find("Canvas");
+        // buttons
+        if (_of.FindCanvasObject("Results", out sceneObject))//GameObject.Find("Scene Controller");
+            resultButton = sceneObject.GetComponent<UnityEngine.UI.Button>();
+        // sceneObject = GameObject.Find("Results");
+        if (_of.FindCanvasObject("Reset", out sceneObject))//GameObject.Find("Scene Controller");
+            reloadButton = sceneObject.GetComponent<ReloadButton>();
+        // sceneObject = GameObject.Find("Reset");
+        // Texts from buttons
+        if (_of.FindButtonChild("Results", "Win_Lose", out sceneObject)) //GameObject.Find("Scene Controller");
+            resultsText = sceneObject.GetComponent<Text>();
+        if (_of.FindButtonChild("Projectile Count", "Projectile Count", out sceneObject)) //GameObject.Find("Scene Controller");
+            projectilesLeftText = sceneObject.GetComponent<Text>();
+        if (_of.FindButtonChild("Customers Left", "Customers Left", out sceneObject)) //GameObject.Find("Scene Controller");
+            targetsLeftText = sceneObject.GetComponent<Text>();
+        /*
+        sceneObject = GameObject.Find("Win_Lose");
+        sceneObject = GameObject.Find("Projectile Count");
+        sceneObject = GameObject.Find("Customers Left");
         */
 
         SetCountTexts();
@@ -165,6 +215,8 @@ public class LevelController : MonoBehaviour
                 resultButton.gameObject.SetActive(false);
                 break;
         }
+
+
     }
 
     // Update is called once per frame

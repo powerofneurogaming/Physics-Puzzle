@@ -8,9 +8,11 @@ public class Projectile : MonoBehaviour
     // Variables used in this class - should all start with underscore (_)
     // Public:
     // External objects to modify
+	/*
     public Player player;
 	public LevelController levelController;
 	public UnityEngine.UI.Button reloadProjectileButton;
+	*/
 	// public UnityEngine.UI.Button winButton;
 	// Local:
 	// Currently not modified after Start function
@@ -24,6 +26,11 @@ public class Projectile : MonoBehaviour
 	[SerializeField] private string _objectName = "Projectile";
 	private Vector3 _launchingPoint, _playerPosition;
     private string _currentSceneName;
+	// Components from external scripts
+	private Player _player;
+	private LevelController _lc;
+	private UnityEngine.UI.Button _reloadProjectileButton;
+	// Local components for modification
 	private Rigidbody2D _rb2d;
 	private LineRenderer _lr;
 	private SpriteRenderer _sr;
@@ -39,7 +46,7 @@ public class Projectile : MonoBehaviour
      */
 	public void ResetProjectile()
 	{
-		int projectilesLeft = levelController.DecrementProjectiles();
+		int projectilesLeft = _lc.DecrementProjectiles();
 		Debug.Log($"There are {projectilesLeft} projectiles left");
 		if (projectilesLeft <= 0)
 		{
@@ -55,7 +62,7 @@ public class Projectile : MonoBehaviour
 		_rb2d.gravityScale = 0;
 		SetVelocitiesToZero();
 		transform.rotation = Quaternion.Euler(0, 0, 0);
-		reloadProjectileButton.gameObject.SetActive(false);
+		_reloadProjectileButton.gameObject.SetActive(false);
 	}
 
 	/*
@@ -75,7 +82,6 @@ public class Projectile : MonoBehaviour
 	{
 		Debug.LogFormat("{0} has awakened!", _objectName);
         Debug.LogFormat("Object name of {0}", name);
-		reloadProjectileButton.gameObject.SetActive(false);
 		// Assign the GeComponent to the variables, so there aren't so many GeComponent calls.
 		_rb2d = GetComponent<Rigidbody2D>();
         _lr = GetComponent<LineRenderer>();
@@ -84,17 +90,44 @@ public class Projectile : MonoBehaviour
 		_launchCount = 0;
 		_currentSceneName = SceneManager.GetActiveScene().name;
 		// Set the position to position at start
-		//Vector3 newPosition = Camera.main.ScreenToWorldPoint(player.transform.position); //.x, player.transform.y, player.transform.z);
+		//Vector3 newPosition = Camera.main.ScreenToWorldPoint(_player.transform.position); //.x, _player.transform.y, _player.transform.z);
 		// transform.position = newPosition; //new Vector3(newPosition.x, newPosition.y, 1);
-		PutProjectileAbovePlayer();
-		// transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 10, 1);
+		// PutProjectileAbovePlayer();
+		// transform.position = new Vector3(_player.transform.position.x, _player.transform.position.y + 10, 1);
 		Debug.LogFormat("The initial position is {0}", _launchingPoint);
 	}
     // Start is called before the first frame update
     private void Start()
     {
 		Debug.LogFormat("{0} has started!", _objectName);
-		Debug.LogFormat("Object name of {0}", name);
+		// Initializing the references to external scripts and their objects - path and case sensitive!
+		Debug.LogFormat("Starting to set up links for {0}", name);
+		GameObject sceneObject = GameObject.Find("Player (stand-in)");
+		if (sceneObject == null)
+			Debug.Log("Couldn't find sceneObject [Player]!");
+		else
+			Debug.Log("Found sceneObject [Player]!");
+		_player = sceneObject.GetComponent<Player>();
+
+		sceneObject = GameObject.Find("Level Controller");
+		if (sceneObject == null)
+			Debug.Log("Couldn't find sceneObject [Level Controller]!");
+		else
+			Debug.Log("Found sceneObject [Level Controller]!");
+		_lc = sceneObject.GetComponent<LevelController>();
+
+		GameObject canvasObject = GameObject.Find("Canvas");
+		sceneObject = canvasObject.transform.Find("Projectile Reload").gameObject; //transform.Find("Projectile Reload");
+		// sceneObject = GameObject.Find("Canvas/Projectile Reload");
+		if (sceneObject == null)
+			Debug.Log("Couldn't find sceneObject [Canvas/Projectile Reload]!");
+		else
+			Debug.Log("Found sceneObject [Canvas/Projectile Reload]!");
+		_reloadProjectileButton = sceneObject.GetComponent<UnityEngine.UI.Button>();
+
+		_reloadProjectileButton.gameObject.SetActive(false);
+
+		Debug.LogFormat("Start has finished for {0}", name);
 	}
 
 
@@ -192,7 +225,7 @@ public class Projectile : MonoBehaviour
 		if (!_objectWasLaunched)
 		{
 			// _rb2d.isKinematic = false;
-			reloadProjectileButton.gameObject.SetActive(true);
+			_reloadProjectileButton.gameObject.SetActive(true);
 			// Disable line
 			_lr.enabled = false;
 			// Turn it white (original color)
@@ -219,7 +252,7 @@ public class Projectile : MonoBehaviour
     {
 		// Vector3 newPosition = new Vector3(player.transform.position.x, player.transform.position.y + 10, player.transform.position0.z);
 		// transform.position = newPosition;
-		_launchingPoint = new Vector3(player.transform.position.x, player.transform.position.y + _projectileElevation, player.transform.position.z);
+		_launchingPoint = new Vector3(_player.transform.position.x, _player.transform.position.y + _projectileElevation, _player.transform.position.z);
 	}
 
 	private void MoveProjectileToLaunchingPoint()
