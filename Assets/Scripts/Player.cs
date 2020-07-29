@@ -15,9 +15,11 @@ public class Player : MonoBehaviour
     // public
     public float speed;
     // Private
+    [SerializeField] private bool _movementEnabled = false;
+    [SerializeField] private bool _verticalMovementEnabled = false;
+
     private Rigidbody2D _rb;
     private Vector2 moveVelocity;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -31,10 +33,18 @@ public class Player : MonoBehaviour
     {
         // We continuous calculate the velocity of the character based on button inputs (up-down, left-right)
         // Use GetAxisRaw for sharper stopping
-        float verticalChange = Math.Min(0, Input.GetAxisRaw("Vertical")); // Make sure the player can't go upward
-        Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), verticalChange);
+        if (_movementEnabled)
+        {
+            float verticalChange;
+            if (_verticalMovementEnabled)
+                verticalChange = Input.GetAxisRaw("Vertical");
+            else
+                verticalChange = Math.Min(0, Input.GetAxisRaw("Vertical")); // Make sure the player can't go upward
+            Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), verticalChange);
 
-        moveVelocity = moveInput * speed;
+            moveVelocity = moveInput * speed;
+        }
+        
     }
 
     private void FixedUpdate()
