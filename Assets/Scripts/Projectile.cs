@@ -34,6 +34,8 @@ public class Projectile : MonoBehaviour
 	private Rigidbody2D _rb2d;
 	private LineRenderer _lr;
 	private SpriteRenderer _sr;
+
+	private ObjectFinder _of = new ObjectFinder();
 	// Modified after start
 
 	private bool _objectWasLaunched, _objectDragged;

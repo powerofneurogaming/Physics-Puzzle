@@ -34,12 +34,12 @@ public class LevelController : MonoBehaviour
 
     private ObjectFinder _of = new ObjectFinder();
     // private ReloadButton _rb = new ReloadButton();
-    private Text resultsText; // Appears when level is lossed or won
-    private Text projectilesLeftText, targetsLeftText; // Displayed in buttons
-    private UnityEngine.UI.Button resultButton; // For making the button disappear, reappear, & change behavior
+    public Text resultsText; // Appears when level is lossed or won
+    public Text projectilesLeftText, targetsLeftText; // Displayed in buttons
+    public UnityEngine.UI.Button resultButton; // For making the button disappear, reappear, & change behavior
     // private ReloadButton reloadButton;
-    private SceneController sceneController;
-    private ReloadButton reloadButton;
+    public SceneController sceneController;
+    public ReloadButton reloadButton;
 
     private int _projectilesPerTargets = 3; // 6 - difficulty
     // Counters for the playable levels, with default values
@@ -175,16 +175,25 @@ public class LevelController : MonoBehaviour
         _projectilesLeft = _projectilesStart = _targetsLeft * _projectilesPerTargets;
         */
         GameObject sceneObject; // = 
-        if(_of.FindObject("Scene Controller", out sceneObject))//GameObject.Find("Scene Controller");
-            sceneController = sceneObject.GetComponent<SceneController>();
+        if (sceneController == null)
+        {
+            if (_of.FindObject("Scene Controller", out sceneObject))//GameObject.Find("Scene Controller");
+                sceneController = sceneObject.GetComponent<SceneController>();
+        }
         // Get the canvas for all the button related stuff
-       //  GameObject canvasObject = GameObject.Find("Canvas");
+        //  GameObject canvasObject = GameObject.Find("Canvas");
         // buttons
-        if (_of.FindCanvasObject("Results", out sceneObject))//GameObject.Find("Scene Controller");
-            resultButton = sceneObject.GetComponent<UnityEngine.UI.Button>();
+        if (resultButton == null)
+        {
+            if (_of.FindCanvasObject("Results", out sceneObject))//GameObject.Find("Scene Controller");
+                resultButton = sceneObject.GetComponent<UnityEngine.UI.Button>();
+        }
         // sceneObject = GameObject.Find("Results");
-        if (_of.FindCanvasObject("Reset", out sceneObject))//GameObject.Find("Scene Controller");
-            reloadButton = sceneObject.GetComponent<ReloadButton>();
+        if (reloadButton == null)
+        {
+            if (_of.FindCanvasObject("Reset", out sceneObject))//GameObject.Find("Scene Controller");
+                reloadButton = sceneObject.GetComponent<ReloadButton>();
+        }
         // sceneObject = GameObject.Find("Reset");
         // Texts from buttons
         if (_of.FindButtonChild("Results", "Win_Lose", out sceneObject)) //GameObject.Find("Scene Controller");

@@ -11,10 +11,17 @@ public class Pit : MonoBehaviour
 {
     public LevelController levelController;
 
+    private ObjectFinder _of = new ObjectFinder();
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        if(levelController==null)
+        {
+            GameObject lcObject;
+            if (_of.FindObject("Level Controller", out lcObject))
+                levelController = lcObject.GetComponent<LevelController>();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
