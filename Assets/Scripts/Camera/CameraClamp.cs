@@ -15,9 +15,10 @@ public class CameraClamp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Sets the camera to a range based off the target.
         transform.position = new Vector3(
-            Mathf.Clamp(targetToFollow.position.x, -5.5f, 5.5f),
-            Mathf.Clamp(targetToFollow.position.y, -5f, 5f),
+            Mathf.Clamp(targetToFollow.position.x, -1.5f, 10.5f),
+            Mathf.Clamp(targetToFollow.position.y, -1f, 5f),
             transform.position.z);
     }
 }
