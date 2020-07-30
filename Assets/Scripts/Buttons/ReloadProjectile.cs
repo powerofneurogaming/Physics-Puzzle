@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ReloadProjectile : MonoBehaviour
 {
-    public Projectile food;
+    [SerializeField]  private Projectile food;
     private ObjectFinder _of = new ObjectFinder();
 
     public void CallProjectileReload()

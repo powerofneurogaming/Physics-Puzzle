@@ -26,15 +26,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level Selection Screens/World Select.unity
     guid: 86d72325125fa8b4bb22793b8b969307
-  - enabled: 1
-    path: Assets/Scenes/Level Selection Screens/World 1/World 1-1.unity
-    guid: 06dbbe56aac630943836a6b7605d58fa
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Level Selection Screens/World 2/World 2-1.unity
     guid: d21b0f5f0e4c8cd4888216b5fb695582
-  - enabled: 1
-    path: Assets/Scenes/Level Selection Screens/World 3/World 3-1.unity
-    guid: c44bb8558166fc44dab4f1833fe86c8c
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Levels/World 1/Level 1-1.unity
     guid: 672f3ac5e4056ad4483c047a767c061a
@@ -54,7 +54,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Levels/World 2 (beach)/Level 2-1.unity
     guid: 2c1ebf505bf625849823691785c33805
   - enabled: 1
-    path: Assets/Scenes/Levels/World 2 (beach)/Level 2-2.unity
+    path: Assets/Scenes/Levels/World 2 (beach)/Level 2-3.unity
     guid: c6f232d41fd594dd4bd634b2d105907e
   - enabled: 1
     path: Assets/Scenes/Levels/World 2 (beach)/Level 2-4.unity
