@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class PSBoundariesOrthographic : MonoBehaviour
 {
-    public Camera MainCamera; //be sure to assign this in the inspector to your main camera
+    public Camera MainCamera;
     private Vector2 screenBounds;
     private float objectWidth;
     private float objectHeight;
@@ -24,15 +24,14 @@ public class PSBoundariesOrthographic : MonoBehaviour
     void LateUpdate()
     {
         Vector3 viewPos = transform.position;
-        // for Perspective camera
+        // For Perspective cameras
         /*
-        viewPos.x = Mathf.Clamp(viewPos.x, screenBounds.x + objectWidth, screenBounds.x * -1 - objectWidth);
+         * viewPos.x = Mathf.Clamp(viewPos.x, screenBounds.x + objectWidth, screenBounds.x * -1 - objectWidth);
         viewPos.y = Mathf.Clamp(viewPos.y, screenBounds.y + objectHeight, screenBounds.y * -1 - objectHeight);
         */
-        // For Orthographic camera
+        // For Orthoginal
         viewPos.x = Mathf.Clamp(viewPos.x, screenBounds.x * -1 + objectWidth, screenBounds.x - objectWidth);
         viewPos.y = Mathf.Clamp(viewPos.y, screenBounds.y * -1 + objectHeight, screenBounds.y - objectHeight);
-
         transform.position = viewPos;
     }
 }
