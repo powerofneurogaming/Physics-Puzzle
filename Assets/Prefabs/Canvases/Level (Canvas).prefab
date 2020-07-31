@@ -1266,6 +1266,11 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4141207322583511802, guid: 15c0ed0fc8d67154ca81adc76a6e7af5,
+        type: 3}
+      propertyPath: m_Text
+      value: '  Projectiles Left: current/start'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15c0ed0fc8d67154ca81adc76a6e7af5, type: 3}
 --- !u!224 &3442245651587702943 stripped
@@ -2044,6 +2049,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3442245652679185834}
     m_Modifications:
+    - target: {fileID: 8322149469972357904, guid: 527aff97b655bb34e81bccde6bdb4003,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8322149469972357904, guid: 527aff97b655bb34e81bccde6bdb4003,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8322149469972357919, guid: 527aff97b655bb34e81bccde6bdb4003,
+        type: 3}
+      propertyPath: m_Text
+      value: '  Customers Left: current/start'
+      objectReference: {fileID: 0}
     - target: {fileID: 8322149470862829612, guid: 527aff97b655bb34e81bccde6bdb4003,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2302,12 +2322,12 @@ PrefabInstance:
     - target: {fileID: 5100007570487402190, guid: 553cefb2e2469e2429eec137a5224b40,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 150
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 5100007570487402190, guid: 553cefb2e2469e2429eec137a5224b40,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 50
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 5100007570487402190, guid: 553cefb2e2469e2429eec137a5224b40,
         type: 3}
