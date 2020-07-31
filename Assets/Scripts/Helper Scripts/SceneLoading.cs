@@ -129,18 +129,25 @@ public class SceneLoading // : MonoBehaviour
         return LoadNextSceneType(sceneType: "Level", worldNo, levelNo);
     }
 
+    /*
+     * Attempts to load the next level in the world, then the first level of the next world
+     * Returns: 0 if no scene found
+     */
     public int LoadNextLevel2(int worldNo, int levelNo)
     {
         // int startingWorld = worldNo;
         int levelLoadedLevel = LoadNextSceneType(sceneType: "Level", worldNo, levelNo);
         if (levelLoadedLevel <= 0) // if we didn't load the level
         {
-            int sceneLoadedLevel = LoadNextWorld(worldNo, levelNo);
-            return sceneLoadedLevel * 2;
+            int sceneLoadedWorld = LoadNextWorld(worldNo, levelNo);
+            if (sceneLoadedWorld <= 0)
+                return LoadWorldNo(worldNo) * 3;
+            return sceneLoadedWorld * 2;
         }
         else
             return levelLoadedLevel;
     }
+
 
     // TODO: Make function go to the next worldNo, not levelNo
     public int LoadNextWorld(int worldNo, int levelNo)

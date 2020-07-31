@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
     {
         // We continuous calculate the velocity of the character based on button inputs (up-down, left-right)
         // Use GetAxisRaw for sharper stopping
-        float verticalChange = Math.Min(0, Input.GetAxisRaw("Vertical"));
+        float verticalChange = Math.Min(0, Input.GetAxisRaw("Vertical")); // Make sure the player can't go upward
         Vector2 moveInput = new Vector2(Input.GetAxisRaw("Horizontal"), verticalChange);
 
         moveVelocity = moveInput * speed;
