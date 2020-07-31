@@ -4,28 +4,34 @@ using UnityEngine.UI;
 
 public class DisplayCurrentWorld : MonoBehaviour
 {
+    // TODO: Have Level Controller do this instead upon getting the values.
     // Variables used in class
     // public
     // public SceneController sceneController;
     // Private
-    private SceneController _sc;
+    [SerializeField] private SceneController _sc;
+    private ObjectFinder _of = new ObjectFinder();
     private bool _worldTextSet = false;
 
     // Start is called before the first frame update
     void Start()
     {
         Debug.Log("Display current world has started!");
-        GameObject sceneObject;
-        // _sc = GameObject.FindObjectOfType<SceneController>().GetComponent<SceneController>();
-        // do
-        //{
+        if (_sc == null)
+        {
+            GameObject sceneObject;
+            // _sc = GameObject.FindObjectOfType<SceneController>().GetComponent<SceneController>();
+            // do
+            //{
             sceneObject = GameObject.Find("Scene Controller"); // .GetComponent<SceneController>();
-        // } while (sceneObject == null);
-        if (sceneObject != null)
-            Debug.Log("Found Scene Controller object!");
-        else
-            Debug.Log("Didn't find Scene controller object...");
-        _sc = sceneObject.GetComponent<SceneController>();
+            // } while (sceneObject == null);
+            if (sceneObject != null)
+                Debug.Log("Found Scene Controller object!");
+            else
+                Debug.Log("Didn't find Scene controller object...");
+            _sc = sceneObject.GetComponent<SceneController>();
+        }
+
         if (_sc != null)
         {
             Debug.Log("Found Scene controller!");

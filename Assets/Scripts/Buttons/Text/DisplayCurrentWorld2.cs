@@ -8,7 +8,7 @@ public class DisplayCurrentWorld2 : MonoBehaviour
     // public
     // public SceneController sceneController;
     // private
-    private SceneController _sc; 
+    [SerializeField] private SceneController _sc; 
     // Start is called before the first frame update
     void Start()
     {

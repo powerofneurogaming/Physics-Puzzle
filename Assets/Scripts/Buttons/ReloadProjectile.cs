@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ReloadProjectile : MonoBehaviour
 {
-    private Projectile food;
+    [SerializeField]  private Projectile food;
     private ObjectFinder _of = new ObjectFinder();
 
     public void CallProjectileReload()
@@ -14,12 +14,14 @@ public class ReloadProjectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject foodObject;
-        if (_of.FindObject("Food", out foodObject))
+        if (food == null)
         {
-            food = foodObject.GetComponent<Projectile>();
+            GameObject foodObject;
+            if (_of.FindObject("Food", out foodObject))
+            {
+                food = foodObject.GetComponent<Projectile>();
+            }
         }
-
     }
 
     // Update is called once per frame

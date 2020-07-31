@@ -14,7 +14,7 @@ public class ObjectFinder // : MonoBehaviour
         foundObject = GameObject.Find(objectName);
         if (foundObject == null)
         {
-            Debug.LogWarning($"Warning! Didn't find [{objectName}] in the hierarcy!");
+            Debug.LogWarning($"Warning! Didn't find [{objectName}] in the hierarchy!");
             return false;
         }
 
@@ -67,9 +67,32 @@ public class ObjectFinder // : MonoBehaviour
         return false;
     }
 
+    public bool FindMainCamera(out GameObject cameraObject)
+    {
+        if (!FindObject("Main Camera", out cameraObject))
+            return FindParentsChild("Player (stand-in)", "Main Camera", out cameraObject);
+        return true;
+    }
+
+    public bool FindCanvas(out GameObject canvasObject)
+    {
+        if( !FindObject("Canvas", out canvasObject))
+        {
+            GameObject cameraObject;
+            if(FindMainCamera(out cameraObject))
+                return FindFromParentObject(cameraObject, "Canvas", out canvasObject);
+            return false;
+        }
+
+        return true;
+    }
+
     public bool FindCanvasObject(string buttonName, out GameObject foundButton)
     {
-        return FindParentsChild("Canvas", buttonName, out foundButton);
+        if (!FindParentsChild("Canvas", buttonName, out foundButton))
+            return FindGrandChildObject("Main Camera", "Canvas", buttonName, out foundButton);
+        return true;
+
     }
 
     public bool FindButtonChild(string buttonName, string childName, out GameObject childObject)
@@ -84,4 +107,6 @@ public class ObjectFinder // : MonoBehaviour
         }
         return false;
     }
+
+    // public bool FindObjectComponent(function Func)
 }

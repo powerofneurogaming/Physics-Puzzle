@@ -5,14 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class NextLevel : MonoBehaviour
 {
-    public SceneController SceneController;
+    public SceneController sceneController;
 
     // private SceneParsing _sp = new SceneParsing();
     private SceneLoading _sl = new SceneLoading();
+    private ObjectFinder _of = new ObjectFinder();
+    // private SceneController sceneController;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject sceneControllerObject;
+        if (sceneController == null)
+        {
+            if (_of.FindObject("Scene Controller", out sceneControllerObject))
+                sceneController = sceneControllerObject.GetComponent<SceneController>();
+        }
     }
 
     // Update is called once per frame
@@ -29,6 +37,6 @@ public class NextLevel : MonoBehaviour
         /*
         string currentSceneName = SceneManager.GetActiveScene().name;
         */
-        _sl.loadLevel(SceneController.getWorld(), SceneController.getLevel());
+        _sl.loadLevel(sceneController.getWorld(), sceneController.getLevel());
     }
 }

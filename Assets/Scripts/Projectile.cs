@@ -34,6 +34,8 @@ public class Projectile : MonoBehaviour
 	private Rigidbody2D _rb2d;
 	private LineRenderer _lr;
 	private SpriteRenderer _sr;
+
+	private ObjectFinder _of = new ObjectFinder();
 	// Modified after start
 
 	private bool _objectWasLaunched, _objectDragged;
@@ -126,6 +128,8 @@ public class Projectile : MonoBehaviour
 		_reloadProjectileButton = sceneObject.GetComponent<UnityEngine.UI.Button>();
 
 		_reloadProjectileButton.gameObject.SetActive(false);
+		Physics2D.IgnoreCollision(GetComponent<PolygonCollider2D>(), _player.GetComponent<BoxCollider2D>());
+		Physics2D.IgnoreCollision(GetComponent<PolygonCollider2D>(), _player.GetComponent<CircleCollider2D>());
 
 		Debug.LogFormat("Start has finished for {0}", name);
 	}
@@ -155,7 +159,7 @@ public class Projectile : MonoBehaviour
 
 		// Reset position when object moves too far to the side or down, or effectively stops moving.
 		// TODO: Make x ( and possibly y) range either wider, dependent on a moving camera, or both.
-		if (transform.position.y < -10 ||
+		if (transform.position.y < -20 ||
 		_timeSittingAround > 3)  // transform.position.x > 20 ||transform.position.x < -20 ||
 		{ // transform.position.y > 10 ||
             ResetProjectile(); 
