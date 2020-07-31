@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca87fa212d07a39428d3e337f41b910d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lc: {fileID: 0}
   _cloudParticlePrefab: {fileID: 162081505674683965, guid: e6ece6a5071a0c74d8037c6018176489,
     type: 3}
 --- !u!212 &8461591088218001443
