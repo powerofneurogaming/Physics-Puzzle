@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+/* Possible mprovements:
+ * 
+*/
 /*
  * Class used to find the GameObjects in the scene hierarchy
  */
@@ -22,6 +25,13 @@ public class ObjectFinder // : MonoBehaviour
         return true;
     }
 
+    public GameObject FindObject(string objectName)
+    {
+        GameObject foundObject;
+        FindObject(objectName, out foundObject);
+        return foundObject;
+    }
+
     public bool FindFromParentObject(GameObject parentObject, string child, out GameObject childObject)
     {
         childObject = parentObject.transform.Find(child).gameObject;
@@ -33,6 +43,13 @@ public class ObjectFinder // : MonoBehaviour
 
         Debug.Log($"Found the child [{child}] of GameObject parent [{parentObject.name}]!");
         return true;
+    }
+
+    public GameObject FindFromParentObject(GameObject parentObject, string child)
+    {
+        GameObject childObject;
+        FindFromParentObject(parentObject, child, out childObject);
+        return childObject;
     }
 
     public bool FindParentsChild(string parent, string child, out GameObject childObject)
@@ -56,6 +73,13 @@ public class ObjectFinder // : MonoBehaviour
         return false;
     }
 
+    public GameObject FindParentsChild(string parent, string child)
+    {
+        GameObject childObject;
+        FindParentsChild(parent, child, out childObject);
+        return childObject;
+    }
+
     public bool FindGrandChildObject(string parent, string child, string grandChild, out GameObject grandChildObject)
     {
         grandChildObject = null;
@@ -67,11 +91,25 @@ public class ObjectFinder // : MonoBehaviour
         return false;
     }
 
+    public GameObject FindGrandChildObject(string parent, string child, string grandChild)
+    {
+        GameObject grandChildObject;
+        FindGrandChildObject(parent,  child, grandChild, out grandChildObject);
+        return grandChildObject;
+    }
+
     public bool FindMainCamera(out GameObject cameraObject)
     {
         if (!FindObject("Main Camera", out cameraObject))
             return FindParentsChild("Player (stand-in)", "Main Camera", out cameraObject);
         return true;
+    }
+
+    public GameObject FindMainCamera()
+    {
+        GameObject cameraObject;
+        FindMainCamera(out cameraObject);
+        return cameraObject;
     }
 
     public bool FindCanvas(out GameObject canvasObject)

@@ -20,6 +20,7 @@ public class SceneController : MonoBehaviour
 
     // TODO: replace getters and setters with shorthand
     public int getWorld(){return World;}
+    // public void setWorld(int newWorld) { World = newWorld; }
     public void setWorld(int newWorld) => World = newWorld;
     public int getLevel() { return Level; }
     public void setLevel(int newLevel) => Level = newLevel;

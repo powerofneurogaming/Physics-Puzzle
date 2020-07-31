@@ -59,7 +59,9 @@ public class LevelController : MonoBehaviour
     public int GetTargetsCount() { return _targetsLeft; }
     public int GetProjectilesCount() { return _projectilesLeft; }
 
-
+    #region someRegion 
+    // Some comment
+    #endregion
     /*
      * Function used for newly-spawned targets
      */
@@ -121,6 +123,12 @@ public class LevelController : MonoBehaviour
             Debug.Log("Projectiles counter has gone to 0 or below!");
             SetResultsButton(isWin: false, resultReason: "You ran out of food!");
         }
+        else if(_projectilesLeft < _targetsLeft)
+        {
+            Debug.Log($"Not enough food for the {_targetsLeft} customers!\n" +
+                $"You only have {_projectilesLeft} pieces of food!");
+            SetResultsButton(isWin: false, resultReason: "Not enough food!");
+        }
         return _projectilesLeft;
     }
 
@@ -177,8 +185,14 @@ public class LevelController : MonoBehaviour
         GameObject sceneObject; // = 
         if (sceneController == null)
         {
-            if (_of.FindObject("Scene Controller", out sceneObject))//GameObject.Find("Scene Controller");
-                sceneController = sceneObject.GetComponent<SceneController>();
+            sceneController = FindObjectOfType<SceneController>();
+            if (sceneController == null)
+            {
+                if (_of.FindObject("Scene Controller", out sceneObject))//GameObject.Find("Scene Controller");
+                    sceneController = sceneObject.GetComponent<SceneController>();
+            }
+            else
+                Debug.Log("SceneController has been found by FindObjectOfType!");
         }
         // Get the canvas for all the button related stuff
         //  GameObject canvasObject = GameObject.Find("Canvas");
