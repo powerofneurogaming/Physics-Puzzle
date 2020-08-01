@@ -3,6 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoading // : MonoBehaviour
 {
+    // Variables
+    private string _victoryScene = "Victory Screen";
 
     // Functions
     // Public
@@ -15,7 +17,7 @@ public class SceneLoading // : MonoBehaviour
         }
         else
         {
-            Debug.LogFormat("Did not find scene {0}! Either it doesn't exist, or it isn't in the build.", sceneName);
+            Debug.LogWarningFormat("Did not find scene {0}! Either it doesn't exist, or it isn't in the build.", sceneName);
         }
 
         return false;
@@ -113,6 +115,8 @@ public class SceneLoading // : MonoBehaviour
             {
                 Debug.Log($"Couldn't load the next {sceneType}'s World's first level. \n" +
                     $"You've probably reached the end of the selection, or game!");
+                if (!TryLoadingScene(_victoryScene))
+                    Debug.LogWarning("Well, it looks like the Victory scene isn't there...");
                 //--worldNo;
             }
         }
