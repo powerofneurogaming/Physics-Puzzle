@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Used to make sure that the button uses the food reload function
+ */
 public class ReloadProjectile : MonoBehaviour
 {
     [SerializeField]  private Projectile food;
@@ -21,6 +24,8 @@ public class ReloadProjectile : MonoBehaviour
             {
                 food = foodObject.GetComponent<Projectile>();
             }
+
+            
         }
     }
 
