@@ -25,7 +25,8 @@ public class ReloadProjectile : MonoBehaviour
                 food = foodObject.GetComponent<Projectile>();
             }
 
-            
+            UnityEngine.UI.Button projectileReloadButton = GetComponent<UnityEngine.UI.Button>();
+            projectileReloadButton.onClick.AddListener(() => CallProjectileReload());
         }
     }
 
