@@ -1382,7 +1382,7 @@ PrefabInstance:
     - target: {fileID: 1206768646631782230, guid: f0f43e8eb242dd14ba04b74725a7c601,
         type: 3}
       propertyPath: m_Name
-      value: Crab Meat
+      value: Food
       objectReference: {fileID: 0}
     - target: {fileID: 4953624018127567296, guid: f0f43e8eb242dd14ba04b74725a7c601,
         type: 3}
