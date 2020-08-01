@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/SFX/gulp.mp3.meta
 guid: c6ba847aa73132c4c89619380e82d01c
+=======
+guid: d20f2264692681047b7ac222be94204d
+>>>>>>> fe45ffb622bbb7b915c394bde7c238aee686b81d:Assets/SFX/chomp.wav.meta
+=======
+guid: 3374994c8789ea44298a230ed79981a2
+>>>>>>> fe45ffb622bbb7b915c394bde7c238aee686b81d
 AudioImporter:
   externalObjects: {}
   serializedVersion: 6
