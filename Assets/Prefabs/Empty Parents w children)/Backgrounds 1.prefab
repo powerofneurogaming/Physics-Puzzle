@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6037080265845058921}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 328.63446}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 324288217927633095}
@@ -41,6 +41,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6037080265845058920}
     m_Modifications:
+    - target: {fileID: 1588488617853774238, guid: dd0a0f3588d24bd4790d685fdec1b8d7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.45
+      objectReference: {fileID: 0}
     - target: {fileID: 3402433647641955240, guid: dd0a0f3588d24bd4790d685fdec1b8d7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -106,6 +111,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Beach Background
       objectReference: {fileID: 0}
+    - target: {fileID: 4500931332006148630, guid: dd0a0f3588d24bd4790d685fdec1b8d7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500931332006148630, guid: dd0a0f3588d24bd4790d685fdec1b8d7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 4928780028157152798, guid: dd0a0f3588d24bd4790d685fdec1b8d7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd0a0f3588d24bd4790d685fdec1b8d7, type: 3}
 --- !u!4 &3114484096566876693 stripped
@@ -134,7 +154,7 @@ PrefabInstance:
     - target: {fileID: 4829260293833496397, guid: dfc5ddb6ab0e31e41a41e885b1d27d5e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -20
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4829260293833496397, guid: dfc5ddb6ab0e31e41a41e885b1d27d5e,
         type: 3}

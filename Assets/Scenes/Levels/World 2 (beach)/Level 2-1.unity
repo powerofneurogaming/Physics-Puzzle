@@ -502,15 +502,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 324288217927633093, guid: e1619a516003be04ba1e4e4902112914,
+    - target: {fileID: 3114484096566876693, guid: e1619a516003be04ba1e4e4902112914,
         type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5362184598518952490, guid: e1619a516003be04ba1e4e4902112914,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 20
+      propertyPath: m_LocalPosition.x
+      value: 3.6
       objectReference: {fileID: 0}
     - target: {fileID: 6037080265845058920, guid: e1619a516003be04ba1e4e4902112914,
         type: 3}
@@ -571,11 +566,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Backgrounds 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6037080266778850494, guid: e1619a516003be04ba1e4e4902112914,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1619a516003be04ba1e4e4902112914, type: 3}
