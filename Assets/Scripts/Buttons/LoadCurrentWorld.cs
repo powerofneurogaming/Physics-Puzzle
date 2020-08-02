@@ -25,6 +25,9 @@ public class LoadCurrentWorld : MonoBehaviour
         {
             sceneController = FindObjectOfType<SceneController>();
         }
+
+        UnityEngine.UI.Button currentWorldButton = GetComponent<UnityEngine.UI.Button>();
+        currentWorldButton.onClick.AddListener(() => GoToLevelSelect());
     }
 
     // Update is called once per frame
