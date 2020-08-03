@@ -69,7 +69,7 @@ PrefabInstance:
     - target: {fileID: 4100004062562467500, guid: a62f93e650f25894ba8f0151e9849282,
         type: 3}
       propertyPath: m_Name
-      value: Player (stand-in)
+      value: Player (stand-in) Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4100004062562467501, guid: a62f93e650f25894ba8f0151e9849282,
         type: 3}
@@ -111,6 +111,11 @@ PrefabInstance:
       propertyPath: m_UsedByEffector
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4100004062562467501, guid: a62f93e650f25894ba8f0151e9849282,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4100004062562467502, guid: a62f93e650f25894ba8f0151e9849282,
         type: 3}
       propertyPath: m_GravityScale
@@ -120,7 +125,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: cec3975427e57864db5ac96aef3bebe3,
+      objectReference: {fileID: 21300000, guid: 3b2c31b62c145a245b894864dc015f63,
         type: 3}
     - target: {fileID: 4100004062562467503, guid: a62f93e650f25894ba8f0151e9849282,
         type: 3}
@@ -140,7 +145,7 @@ PrefabInstance:
     - target: {fileID: 4100004062562467503, guid: a62f93e650f25894ba8f0151e9849282,
         type: 3}
       propertyPath: m_Size.x
-      value: 3.9
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4100004062562467503, guid: a62f93e650f25894ba8f0151e9849282,
         type: 3}

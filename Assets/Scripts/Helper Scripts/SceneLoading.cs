@@ -145,7 +145,11 @@ public class SceneLoading // : MonoBehaviour
         {
             int sceneLoadedWorld = LoadNextWorld(worldNo, levelNo);
             if (sceneLoadedWorld <= 0)
-                return LoadWorldNo(worldNo) * 3;
+            {
+                // Try Loading the victory screen
+                if (!TryLoadingScene(_victoryScene))
+                    return LoadWorldNo(worldNo) * 3;
+            }
             return sceneLoadedWorld * 2;
         }
         else
