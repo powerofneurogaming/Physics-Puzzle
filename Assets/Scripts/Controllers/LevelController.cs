@@ -123,12 +123,12 @@ public class LevelController : MonoBehaviour
             Debug.Log("Projectiles counter has gone to 0 or below!");
             SetResultsButton(isWin: false, resultReason: "You ran out of food!");
         }
-        else if(_projectilesLeft < _targetsLeft)
+        /*else if(_projectilesLeft < _targetsLeft)
         {
             Debug.Log($"Not enough food for the {_targetsLeft} customers!\n" +
                 $"You only have {_projectilesLeft} pieces of food!");
             SetResultsButton(isWin: false, resultReason: "Not enough food!");
-        }
+        } */
         return _projectilesLeft;
     }
 
