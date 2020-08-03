@@ -194,6 +194,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 417387101, guid: 31515f48e716c68489af7d496079b861, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 861905203, guid: 31515f48e716c68489af7d496079b861, type: 3}
+      propertyPath: m_Text
+      value: Credits
+      objectReference: {fileID: 0}
+    - target: {fileID: 1589077223, guid: 31515f48e716c68489af7d496079b861, type: 3}
+      propertyPath: m_Name
+      value: Credits Title
+      objectReference: {fileID: 0}
+    - target: {fileID: 2082981574, guid: 31515f48e716c68489af7d496079b861, type: 3}
+      propertyPath: m_Text
+      value: 'Game made as part of Power of Neurogaming summer internship project
+        2020.
+
+
+        Game Programmer: Christopher E Naschke
+
+        Game Designer:
+        Fiona Gibson
+
+        Game Tester: Logan Wright
+
+        Manager: David Frieder
+
+        Artist:
+        Ian Iwinski
+
+        Coach: Richard Ellks
+
+
+        Borrowed assets are property
+        of their owners.'
+      objectReference: {fileID: 0}
     - target: {fileID: 6011634188138488080, guid: 31515f48e716c68489af7d496079b861,
         type: 3}
       propertyPath: m_Name

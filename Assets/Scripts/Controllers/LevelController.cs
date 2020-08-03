@@ -254,6 +254,11 @@ public class LevelController : MonoBehaviour
         }
     }
 
+    private void LateUpdate()
+    {
+        SetCountTexts();
+    }
+
     private string MakeResultText(bool isWin, string resultReason)
     {
         // Calculate the level bonuses
