@@ -194,6 +194,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 861905203, guid: 31515f48e716c68489af7d496079b861, type: 3}
+      propertyPath: m_Text
+      value: 'You beat the game!
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1589077223, guid: 31515f48e716c68489af7d496079b861, type: 3}
+      propertyPath: m_Name
+      value: Victory
+      objectReference: {fileID: 0}
     - target: {fileID: 6011634188138488080, guid: 31515f48e716c68489af7d496079b861,
         type: 3}
       propertyPath: m_Name
