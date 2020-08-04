@@ -58,7 +58,8 @@ public class Target : MonoBehaviour
 	private void MakePuffOfClouds()
     {
 		// TODO: Stop particle effect after first puff - currently keeps looping
-		Instantiate(_cloudParticlePrefab, transform.position, Quaternion.identity);
+		GameObject puff = Instantiate(_cloudParticlePrefab, transform.position, Quaternion.identity);
+		Destroy(puff, 3);
 		return;
     }
 
